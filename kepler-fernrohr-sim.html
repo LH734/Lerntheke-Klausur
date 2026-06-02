@@ -1,0 +1,300 @@
+<meta charset="utf-8">
+<!--
+  Kepler-Fernrohr - interaktiver Strahlengang
+  Zweistufige Konstruktion: Gegenstand -> reelles Zwischenbild (Objektiv)
+  -> virtuelles, vergroessertes Endbild (Okular als Lupe).
+  Regler: f1 (Objektiv), f2 (Okular), d (Linsenabstand).
+  d ist an f1/f2 gekoppelt, sodass das System immer ein virtuelles
+  Endbild liefert (0 < g2 < f2). Quelltext bewusst ASCII-sicher
+  (Umlaute als HTML-Entities, Sonderzeichen als \u-Escapes).
+-->
+<div id="app">
+  <div class="head">
+    <h1>Strahlengang am Kepler-Fernrohr</h1>
+    <p class="sub">Konstruktion vom Gegenstand &rarr; reelles Zwischenbild &rarr; virtuelles Endbild</p>
+  </div>
+
+  <div class="stage">
+    <canvas id="cv"></canvas>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div class="panel">
+    <div class="sliders">
+      <div class="ctrl">
+        <label><span class="name">Brennweite Objektiv&nbsp;<i>f</i><sub>1</sub></span><span id="vf1" class="val"></span></label>
+        <input type="range" id="f1" min="110" max="280" value="180" step="2">
+      </div>
+      <div class="ctrl">
+        <label><span class="name">Brennweite Okular&nbsp;<i>f</i><sub>2</sub></span><span id="vf2" class="val"></span></label>
+        <input type="range" id="f2" min="35" max="120" value="65" step="1">
+      </div>
+      <div class="ctrl">
+        <label><span class="name">Linsenabstand&nbsp;<i>d</i></span><span id="vd" class="val"></span></label>
+        <input type="range" id="d" min="120" max="460" value="290" step="0.5">
+      </div>
+    </div>
+
+    <div class="toggles">
+      <label class="chk"><input type="checkbox" id="t1" checked> <span class="sw obj"></span>&#9312; Objektiv &amp; Zwischenbild</label>
+      <label class="chk"><input type="checkbox" id="t2" checked> <span class="sw ok"></span>&#9313; Okular &amp; Endbild</label>
+      <label class="chk"><input type="checkbox" id="tf" checked> <span class="sw foc"></span>Brennpunkte</label>
+    </div>
+
+    <div class="btns">
+      <button id="reset" class="ghost">Zur&uuml;cksetzen</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  #app{
+    --bg:#f6f7fb; --card:#ffffff; --ink:#1e2433; --muted:#5b6473; --line:#e3e7ef;
+    --axis:#9aa3b2; --lens:#334155;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink); max-width:1040px; margin:0 auto; padding:16px;
+  }
+  #app *{box-sizing:border-box;}
+  .head h1{font-size:1.35rem; margin:0 0 2px;}
+  .head .sub{margin:0 0 10px; color:var(--muted); font-size:.92rem;}
+  .stage{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:8px 8px 4px;
+    box-shadow:0 2px 10px rgba(20,30,60,.05);}
+  canvas{width:100%; display:block; border-radius:8px;}
+  .status{font-size:.9rem; color:var(--muted); padding:8px 10px 6px; line-height:1.4; min-height:1.4em;}
+  .status b{color:var(--ink); font-weight:600;}
+  .panel{margin-top:12px; background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:14px 16px; box-shadow:0 2px 10px rgba(20,30,60,.05);}
+  .sliders{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .ctrl label{display:flex; justify-content:space-between; align-items:baseline; font-size:.92rem; margin-bottom:6px; gap:8px;}
+  .ctrl .name{white-space:nowrap;}
+  .ctrl .val{font-variant-numeric:tabular-nums; font-weight:600; color:var(--ink);
+    background:var(--bg); border-radius:6px; padding:1px 8px; font-size:.85rem;}
+  input[type=range]{width:100%; accent-color:#2563eb; height:22px;}
+  .toggles{display:flex; flex-wrap:wrap; gap:10px 20px; margin-top:14px; padding-top:12px; border-top:1px solid var(--line);}
+  .chk{display:flex; align-items:center; gap:7px; font-size:.9rem; cursor:pointer; user-select:none;}
+  .chk input{width:16px; height:16px; accent-color:#2563eb;}
+  .sw{width:18px; height:0; border-top:3px solid; border-radius:2px;}
+  .sw.obj{border-color:#0d9488;} .sw.ok{border-color:#ea580c;}
+  .sw.foc{border-top-style:dotted; border-color:#dc2626;}
+  .btns{display:flex; gap:10px; margin-top:14px;}
+  button{font:inherit; font-size:.9rem; padding:8px 14px; border-radius:9px; border:1px solid #2563eb;
+    background:transparent; color:#2563eb; cursor:pointer;}
+  button:active{transform:translateY(1px);}
+  @media(max-width:680px){ .sliders{grid-template-columns:1fr;} }
+</style>
+
+<script>
+(function(){
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const statusEl = document.getElementById('status');
+
+  // ---- Optische Konstanten (willkuerliche Einheiten) ----
+  const G1 = 600;      // Gegenstandsweite (Objekt -> Objektiv)
+  const HG = 64;       // Gegenstandshoehe
+  const EYE = 150;     // rechte Zeichengrenze (Strahlen laufen bis hierher)
+  // erlaubtes Fenster fuer g2 = d - b1 (immer virtuelles Endbild: 0 < g2 < f2)
+  const GLO = 0.10, GHI = 0.78;
+
+  const els = {
+    f1:document.getElementById('f1'), f2:document.getElementById('f2'), d:document.getElementById('d'),
+    t1:document.getElementById('t1'), t2:document.getElementById('t2'), tf:document.getElementById('tf'),
+    vf1:document.getElementById('vf1'), vf2:document.getElementById('vf2'), vd:document.getElementById('vd')
+  };
+  const DEF = {f1:180, f2:65};
+  let prev = {f1:180, f2:65, d:290};
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const b1Of=f1=>G1*f1/(G1-f1);
+
+  function dWindow(f1,f2){
+    const b1=b1Of(f1);
+    return {min:b1+GLO*f2, max:b1+GHI*f2};
+  }
+  function applyDWindow(f1,f2,desiredD){
+    const w=dWindow(f1,f2);
+    els.d.min=w.min.toFixed(2); els.d.max=w.max.toFixed(2);
+    const v=clamp(desiredD,w.min,w.max);
+    els.d.value=v.toFixed(2);
+    return v;
+  }
+
+  // ---- Canvas / DPR ----
+  let cssW=900, cssH=440, dpr=1;
+  function fitCanvas(){
+    cssW = cv.parentElement.clientWidth - 16;
+    cssH = Math.max(340, Math.min(480, cssW*0.46));
+    dpr = window.devicePixelRatio || 1;
+    cv.width = cssW*dpr; cv.height = cssH*dpr;
+    cv.style.height = cssH+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  // ---- Mapping optisch -> Pixel (gleicher Massstab in x & y) ----
+  let SC=1, OFX=0, AXY=0;
+  const px=ox=>OFX+ox*SC;
+  const py=oy=>AXY-oy*SC;
+
+  function arrowHead(x,y,ang,col,s){
+    ctx.save(); ctx.fillStyle=col; ctx.translate(x,y); ctx.rotate(ang);
+    ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-s,s*0.5); ctx.lineTo(-s,-s*0.5);
+    ctx.closePath(); ctx.fill(); ctx.restore();
+  }
+  function seg(x1,y1,x2,y2,col,w,dash){
+    ctx.save(); ctx.strokeStyle=col; ctx.lineWidth=w||2; ctx.setLineDash(dash||[]);
+    ctx.beginPath(); ctx.moveTo(px(x1),py(y1)); ctx.lineTo(px(x2),py(y2)); ctx.stroke(); ctx.restore();
+  }
+  function vArrow(ox,oh,col,w,dash){
+    const x=px(ox), y0=py(0), y1=py(oh);
+    ctx.save(); ctx.strokeStyle=col; ctx.lineWidth=w; ctx.setLineDash(dash||[]);
+    ctx.beginPath(); ctx.moveTo(x,y0); ctx.lineTo(x,y1); ctx.stroke(); ctx.restore();
+    arrowHead(x,y1, oh>=0?-Math.PI/2:Math.PI/2, col, 8);
+  }
+  function label(ox,oy,txt,col,dy,align){
+    ctx.save(); ctx.fillStyle=col; ctx.font='600 13px system-ui,Arial,sans-serif';
+    ctx.textAlign=align||'center';
+    ctx.fillText(txt, px(ox), py(oy)+(dy||0)); ctx.restore();
+  }
+  function lens(ox,half,name){
+    const x=px(ox);
+    ctx.save();
+    ctx.strokeStyle='#64748b'; ctx.fillStyle='rgba(148,163,184,.16)'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.ellipse(x, AXY, 9, half, 0, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle='#334155'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(x, AXY-half); ctx.lineTo(x, AXY+half); ctx.stroke();
+    arrowHead(x, AXY-half, -Math.PI/2, '#334155', 7);
+    arrowHead(x, AXY+half,  Math.PI/2, '#334155', 7);
+    ctx.fillStyle='#334155'; ctx.font='600 13px system-ui,Arial,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(name, x, AXY+half+18);
+    ctx.restore();
+  }
+  function focTick(ox,name){
+    const x=px(ox);
+    ctx.save(); ctx.strokeStyle='#dc2626'; ctx.lineWidth=1.6; ctx.setLineDash([2,3]);
+    ctx.beginPath(); ctx.moveTo(x,AXY-7); ctx.lineTo(x,AXY+7); ctx.stroke();
+    ctx.setLineDash([]); ctx.fillStyle='#dc2626'; ctx.font='12px system-ui,Arial,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(name, x, AXY-11); ctx.restore();
+  }
+
+  function compute(){
+    const f1=+els.f1.value, f2=+els.f2.value, d=+els.d.value;
+    const OX1=G1, OX2=G1+d, xEye=OX2+EYE;
+    const b1=(G1*f1)/(G1-f1);
+    const xB1=OX1+b1;
+    const hB1=-(b1/G1)*HG;                 // negativ -> umgekehrt, verkleinert
+    const g2=Math.max(0.5, OX2-xB1);
+    const b2=(g2*f2)/(g2-f2);              // < 0 -> virtuell (g2 < f2)
+    const xB2=OX2+b2;
+    const hB2=(-b2/g2)*hB1;
+    const slP=-hB1/f2;                     // Parallelstrahl nach Okular (Richtung F2)
+    const slC=-hB1/g2;                     // Mittelpunktstrahl
+    return {f1,f2,d,OX1,OX2,xEye,b1,xB1,hB1,g2,b2,xB2,hB2,slP,slC};
+  }
+
+  function autofit(S){
+    const xs=[0,S.OX1,S.OX2,S.xEye,S.xB1,S.xB2];
+    const xMin=Math.min(...xs), xMax=Math.max(...xs), Wo=xMax-xMin;
+    const halfH=Math.max(Math.abs(HG),Math.abs(S.hB1),Math.abs(S.hB2))*1.22;
+    const mX=58, mY=34;
+    SC=Math.min((cssW-2*mX)/Wo, (cssH/2-mY)/halfH);
+    OFX=(cssW-Wo*SC)/2 - xMin*SC;
+    AXY=cssH/2;
+  }
+
+  function draw(){
+    const S=compute();
+    autofit(S);
+    ctx.clearRect(0,0,cssW,cssH);
+
+    const showObj=els.t1.checked, showOk=els.t2.checked, showF=els.tf.checked;
+    const lensHalf=Math.min(cssH*0.44, Math.max(cssH*0.30, Math.abs(HG)*SC*1.15, Math.abs(S.hB1)*SC*1.15));
+
+    seg(-9999/SC,0,9999/SC,0,'#9aa3b2',1.2);   // optische Achse
+    ctx.save(); ctx.beginPath(); ctx.rect(2,2,cssW-4,cssH-4); ctx.clip();
+
+    if(showF){
+      focTick(S.OX1+S.f1,'F\u2081'); focTick(S.OX1-S.f1,"F\u2081'");
+      if(showOk){ focTick(S.OX2+S.f2,'F\u2082'); focTick(S.OX2-S.f2,"F\u2082'"); }
+    }
+
+    // ---- Objektiv: 3 Konstruktionsstrahlen vom Gegenstand ----
+    if(showObj){
+      const c='#0d9488';
+      seg(0,HG,S.OX1,HG,c,2); seg(S.OX1,HG,S.xB1,S.hB1,c,2);      // Parallelstrahl
+      seg(0,HG,S.xB1,S.hB1,c,2);                                   // Mittelpunktstrahl
+      seg(0,HG,S.OX1,S.hB1,c,2); seg(S.OX1,S.hB1,S.xB1,S.hB1,c,2); // Brennpunktstrahl (durch F1')
+    }
+
+    // ---- Okular: Lupe fuer das Zwischenbild -> virtuelles Endbild ----
+    if(showOk){
+      const c='#ea580c';
+      seg(S.xB1,S.hB1,S.OX2,S.hB1,c,2);
+      seg(S.OX2,S.hB1,S.xEye,S.hB1+S.slP*(S.xEye-S.OX2),c,2);
+      seg(S.xB1,S.hB1,S.xEye,S.hB1+S.slC*(S.xEye-S.xB1),c,2);
+      seg(S.OX2,S.hB1,S.xB2,S.hB2,'#f7a877',1.6,[6,5]);           // rueckw. Verlaengerung
+      seg(S.OX2,0,    S.xB2,S.hB2,'#f7a877',1.6,[6,5]);
+    }
+
+    ctx.restore();
+
+    lens(S.OX1,lensHalf,'Objektiv');
+    lens(S.OX2,lensHalf,'Okular');
+
+    // ---- Gegenstand ----
+    vArrow(0,HG,'#16a34a',3);
+    label(0,HG,'G','#16a34a',-8);
+
+    // ---- Zwischenbild (Blau) ----
+    if(showObj){
+      vArrow(S.xB1,S.hB1,'#2563eb',3);
+      label(S.xB1,S.hB1,'Zwischenbild','#2563eb', S.hB1<0?16:-8);
+    }
+    // ---- Endbild (Magenta, virtuell) ----
+    if(showOk){
+      vArrow(S.xB2,S.hB2,'#db2777',2.4,[6,5]);
+      label(S.xB2,S.hB2,'Endbild','#db2777', S.hB2<0?16:-8);
+    }
+
+    let txt='<b>Zwischenbild:</b> reell, umgekehrt, verkleinert.';
+    if(showOk) txt+='&nbsp; &middot; &nbsp;<b>Endbild:</b> virtuell, vergr&ouml;&szlig;ert, umgekehrt (gegen&uuml;ber dem Gegenstand).';
+    statusEl.innerHTML=txt;
+
+    els.vf1.textContent=Math.round(S.f1);
+    els.vf2.textContent=Math.round(S.f2);
+    els.vd.textContent=Math.round(S.d);
+  }
+
+  // ---- Events: Regler so koppeln, dass das Endbild immer virtuell bleibt ----
+  els.f1.addEventListener('input',()=>{
+    const f1=+els.f1.value, f2=+els.f2.value;
+    const k=(prev.d - b1Of(prev.f1))/prev.f2;          // g2-Anteil beibehalten
+    const nd=applyDWindow(f1,f2, b1Of(f1)+k*f2);
+    prev={f1,f2,d:nd}; draw();
+  });
+  els.f2.addEventListener('input',()=>{
+    const f1=+els.f1.value; let f2=+els.f2.value;
+    const b1=b1Of(f1), g2=prev.d-b1;
+    if(f2 < g2/GHI){ f2=g2/GHI; els.f2.value=f2.toFixed(2); }  // nicht ins Reelle kippen
+    const nd=applyDWindow(f1,f2, prev.d);
+    prev={f1,f2,d:nd}; draw();
+  });
+  els.d.addEventListener('input',()=>{
+    const f1=+els.f1.value, f2=+els.f2.value;
+    const nd=applyDWindow(f1,f2, +els.d.value);
+    prev={f1,f2,d:nd}; draw();
+  });
+  ['t1','t2','tf'].forEach(k=>els[k].addEventListener('change',draw));
+  document.getElementById('reset').addEventListener('click',()=>{
+    els.f1.value=DEF.f1; els.f2.value=DEF.f2;
+    els.t1.checked=els.t2.checked=els.tf.checked=true;
+    const nd=applyDWindow(DEF.f1,DEF.f2, b1Of(DEF.f1)+0.5*DEF.f2);
+    prev={f1:DEF.f1,f2:DEF.f2,d:nd}; draw();
+  });
+  window.addEventListener('resize',()=>{fitCanvas();draw();});
+
+  // ---- Init ----
+  fitCanvas();
+  const initD=applyDWindow(DEF.f1,DEF.f2, b1Of(DEF.f1)+0.5*DEF.f2);
+  prev={f1:DEF.f1,f2:DEF.f2,d:initD};
+  draw();
+})();
+</script>
