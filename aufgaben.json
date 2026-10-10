@@ -1,0 +1,3487 @@
+{
+ "meta": {
+  "titel": "Lerntheke Klausur",
+  "kurs": "Physik GK 12",
+  "klausur": "Mi 04.11.2026, 90 min, Induktion und mechanische Schwingungen",
+  "stand": "2026-10-10",
+  "tempo_min_je_be": 2.2
+ },
+ "themen": [
+  {
+   "id": "I1",
+   "bereich": "Induktion",
+   "titel": "Entstehung der Induktionsspannung",
+   "hefter": "Stationsarbeit Station 1",
+   "checkliste": [
+    "Ladungstrennung im bewegten Leiter mit der Lorentzkraft erklären",
+    "$U = B \\cdot l \\cdot v$ anwenden und umstellen",
+    "nur die Feldkomponente senkrecht zu Leiter und Bewegung zählt"
+   ]
+  },
+  {
+   "id": "I2",
+   "bereich": "Induktion",
+   "titel": "Induktionsgesetz und magnetischer Fluss",
+   "hefter": "Stationsarbeit Station 2",
+   "checkliste": [
+    "$\\Phi = B \\cdot A \\cdot \\cos\\varphi$ und $[\\Phi] = Vs$",
+    "$U = -n \\cdot \\dfrac{\\Delta \\Phi}{\\Delta t}$ für konstante Fläche und für konstantes B",
+    "U(t)-Diagramm aus einem B(t)- oder Φ(t)-Diagramm",
+    "Vorzeichen: steigender Fluss, negative Spannung"
+   ]
+  },
+  {
+   "id": "I3",
+   "bereich": "Induktion",
+   "titel": "Lenz’sche Regel und Selbstinduktion",
+   "hefter": "Stationsarbeit Station 3",
+   "checkliste": [
+    "Lenz’sche Regel: der Induktionsstrom wirkt seiner Ursache entgegen",
+    "Wirbelströme und Wirbelstrombremse",
+    "Ein- und Ausschalten einer Spule: I(t)-Diagramm und Erklärung in Schritten"
+   ]
+  },
+  {
+   "id": "I4",
+   "bereich": "Induktion",
+   "titel": "Induktivität und Permeabilität",
+   "hefter": "Stationsarbeit Station 4",
+   "checkliste": [
+    "$L = \\mu_0 \\cdot \\mu_r \\cdot \\dfrac{n^2 \\cdot A}{l}$",
+    "$U = -L \\cdot \\dfrac{\\Delta I}{\\Delta t}$, Abschaltspannung",
+    "Wirkung von n, A, l und Eisenkern auf L"
+   ]
+  },
+  {
+   "id": "I5",
+   "bereich": "Induktion",
+   "titel": "Transformator und Energiefernleitung",
+   "hefter": "Stationsarbeit Station 5",
+   "checkliste": [
+    "$\\dfrac{U_1}{U_2} = \\dfrac{n_1}{n_2}$ und $\\dfrac{I_1}{I_2} = \\dfrac{n_2}{n_1}$ (ideal)",
+    "Verlustleistung $P_V = I^2 \\cdot R$, Hochspannung",
+    "Wirkungsgrad",
+    "kein Transformator mit Gleichspannung"
+   ]
+  },
+  {
+   "id": "I6",
+   "bereich": "Induktion",
+   "titel": "Der elektromagnetische Schwingkreis",
+   "hefter": "Stationsarbeit Station 6",
+   "checkliste": [
+    "$T = 2\\pi \\cdot \\sqrt{L \\cdot C}$, auch nach L oder C umstellen",
+    "Energie pendelt zwischen elektrischem und magnetischem Feld",
+    "Vergleich mit dem Federschwinger"
+   ]
+  },
+  {
+   "id": "S1",
+   "bereich": "Schwingungen",
+   "titel": "Schwingungen und Kenngrößen",
+   "hefter": "Decks 11 bis 13",
+   "checkliste": [
+    "periodisch und Schwingung unterscheiden, zwei Voraussetzungen",
+    "Elongation y, Amplitude $y_{max}$, T und $f = \\dfrac{1}{T}$ aus einem y(t)-Diagramm",
+    "harmonisch: Rückstellkraft proportional zur Elongation"
+   ]
+  },
+  {
+   "id": "S2",
+   "bereich": "Schwingungen",
+   "titel": "Periodendauer des Federschwingers",
+   "hefter": "Decks 14 und 15",
+   "checkliste": [
+    "$T = 2\\pi \\cdot \\sqrt{\\dfrac{m}{D}}$ anwenden und nach m oder D umstellen",
+    "T hängt nicht von der Amplitude und nicht von g ab",
+    "Zeit für viele Schwingungen messen"
+   ]
+  },
+  {
+   "id": "S3",
+   "bereich": "Schwingungen",
+   "titel": "Energie der Schwingung",
+   "hefter": "Decks 16 und 17",
+   "checkliste": [
+    "$E = \\tfrac{1}{2} \\cdot D \\cdot y_{max}^2$, y zählt ab der Ruhelage",
+    "Umkehrpunkt nur potentielle, Ruhelage nur kinetische Energie",
+    "$v_{max}$ über die Energie"
+   ]
+  },
+  {
+   "id": "S4",
+   "bereich": "Schwingungen",
+   "titel": "Das Weg-Zeit-Gesetz",
+   "hefter": "Deck 18",
+   "checkliste": [
+    "$y(t) = y_{max} \\cdot \\sin(\\omega \\cdot t)$ mit $\\omega = \\dfrac{2\\pi}{T}$",
+    "vier Startpositionen: sin, cos, −sin, −cos",
+    "Taschenrechner im Bogenmaß (RAD)"
+   ]
+  },
+  {
+   "id": "S5",
+   "bereich": "Schwingungen",
+   "titel": "Geschwindigkeit und Beschleunigung",
+   "hefter": "Deck 19",
+   "checkliste": [
+    "$v(t) = y'(t)$ und $a(t) = y''(t)$ (nach t ableiten, Kettenregel)",
+    "$v_{max} = y_{max} \\cdot \\omega$, $a_{max} = y_{max} \\cdot \\omega^2$",
+    "$a = -\\omega^2 \\cdot y$, a zeigt zur Ruhelage"
+   ]
+  },
+  {
+   "id": "S6",
+   "bereich": "Schwingungen",
+   "titel": "Gedämpfte Schwingung",
+   "hefter": "Deck 20",
+   "checkliste": [
+    "Amplitude nimmt ab, Periodendauer bleibt",
+    "Einhüllende verrät die Bremskraft: konstant, ~ v, ~ v²",
+    "Schwingfall, aperiodischer Grenzfall, Kriechfall",
+    "Energie in thermische Energie umgewandelt"
+   ]
+  },
+  {
+   "id": "S7",
+   "bereich": "Schwingungen",
+   "titel": "Erzwungene Schwingung und Resonanz",
+   "hefter": "Deck 21",
+   "checkliste": [
+    "Eigenfrequenz $f_0$ und Erregerfrequenz unterscheiden",
+    "Erregerfrequenz kleiner, größer oder gleich $f_0$",
+    "Resonanz: Energiezufuhr in jeder Periode, Dämpfung begrenzt die Amplitude",
+    "Gefahren beurteilen und Schutzmaßnahmen begründen"
+   ]
+  }
+ ],
+ "aufgaben": [
+  {
+   "id": "I1-G1",
+   "thema": "I1",
+   "stufe": "G",
+   "titel": "Leiterstab auf Schienen",
+   "kontext": "Ein gerader Leiterstab der Länge 40 cm wird mit $2{,}5\\,\\tfrac{m}{s}$ senkrecht zu den Feldlinien durch ein homogenes Magnetfeld mit $B = 0{,}30\\,T$ gezogen.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Spannung zwischen den Stabenden.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.3,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Welche Gleichung verbindet B, l und v mit der Spannung?",
+      "$U = B \\cdot l \\cdot v$. Die Länge muss in Meter eingesetzt werden.",
+      "$U = 0{,}30\\,T \\cdot 0{,}40\\,m \\cdot 2{,}5\\,\\tfrac{m}{s}$"
+     ],
+     "loesung": [
+      "$U = B \\cdot l \\cdot v$",
+      "$U = 0{,}30\\,T \\cdot 0{,}40\\,m \\cdot 2{,}5\\,\\tfrac{m}{s} = 0{,}30\\,V$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Beschreibe, wie zwischen den Stabenden eine Spannung entsteht.",
+     "be": 3,
+     "afb": "I",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die freien Elektronen bewegen sich mit dem Stab durch das Magnetfeld, auf sie wirkt die Lorentzkraft.",
+       "Die Lorentzkraft schiebt die Elektronen zu einem Stabende: dort Elektronenüberschuss, am anderen Ende Elektronenmangel.",
+       "Zwischen den beiden Polen liegt die Induktionsspannung."
+      ]
+     },
+     "hilfen": [
+      "Welche Kraft wirkt auf bewegte Ladungen im Magnetfeld?",
+      "Wohin bewegen sich die Elektronen und was bleibt am anderen Ende zurück?",
+      "Verwende die Begriffe Lorentzkraft, Elektronenüberschuss, Elektronenmangel und Pol."
+     ],
+     "loesung": [
+      "Lorentzkraft auf die bewegten Elektronen",
+      "Ladungstrennung: Überschuss an einem Ende, Mangel am anderen",
+      "zwischen den Polen liegt die Spannung"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I1-G2",
+   "thema": "I1",
+   "stufe": "G",
+   "titel": "Geschwindigkeit aus der Spannung",
+   "kontext": "Ein Stab der Länge 20 cm bewegt sich senkrecht zu den Feldlinien durch ein Magnetfeld mit $B = 0{,}50\\,T$. Zwischen den Enden misst man 45 mV.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Geschwindigkeit des Stabes.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.45,
+      "einheit": "m/s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Stelle $U = B \\cdot l \\cdot v$ nach v um.",
+      "$v = \\dfrac{U}{B \\cdot l}$. Rechne mV in V um.",
+      "$v = \\dfrac{0{,}045\\,V}{0{,}50\\,T \\cdot 0{,}20\\,m}$"
+     ],
+     "loesung": [
+      "$v = \\dfrac{U}{B \\cdot l} = \\dfrac{0{,}045\\,V}{0{,}50\\,T \\cdot 0{,}20\\,m} = 0{,}45\\,\\tfrac{m}{s}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Der Stab wird nun parallel zu den Feldlinien bewegt. Welche Spannung misst man?",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "0 V",
+       "45 mV",
+       "90 mV",
+       "22,5 mV"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Wirkt auf eine Ladung, die sich parallel zu den Feldlinien bewegt, eine Lorentzkraft?"
+     ],
+     "loesung": [
+      "Bei Bewegung parallel zu den Feldlinien wirkt keine Lorentzkraft.",
+      "Es werden keine Ladungen getrennt, die Spannung ist 0 V."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I1-A",
+   "thema": "I1",
+   "stufe": "A",
+   "titel": "Flugzeug im Erdmagnetfeld",
+   "kontext": "Ein Regionalflugzeug mit 35 m Spannweite fliegt waagerecht mit $230\\,\\tfrac{m}{s}$. Die senkrechte Komponente des Erdmagnetfelds beträgt $48\\,\\mu T$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Spannung zwischen den Flügelspitzen.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.386,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Welche Feldkomponente steht senkrecht auf Flügel und Flugrichtung?",
+      "Setze die senkrechte Komponente in $U = B \\cdot l \\cdot v$ ein. $1\\,\\mu T = 10^{-6}\\,T$.",
+      "$U = 48 \\cdot 10^{-6}\\,T \\cdot 35\\,m \\cdot 230\\,\\tfrac{m}{s}$"
+     ],
+     "loesung": [
+      "$U = 48 \\cdot 10^{-6}\\,T \\cdot 35\\,m \\cdot 230\\,\\tfrac{m}{s} \\approx 0{,}39\\,V$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Im Landeanflug fliegt das Flugzeug mit $80\\,\\tfrac{m}{s}$. Berechne die Spannung.",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.134,
+      "einheit": "V",
+      "toleranz_rel": 0.04,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Wie hängt U von v ab?",
+      "U ist proportional zu v. Du kannst neu einsetzen oder mit dem Verhältnis rechnen."
+     ],
+     "loesung": [
+      "$U = 48 \\cdot 10^{-6}\\,T \\cdot 35\\,m \\cdot 80\\,\\tfrac{m}{s} \\approx 0{,}13\\,V$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I1-Z",
+   "thema": "I1",
+   "stufe": "Z",
+   "titel": "Leiterschleife durch ein Magnetfeld",
+   "kontext": "Eine rechteckige Leiterschleife (10 cm hoch, 20 cm lang) wird mit $0{,}50\\,\\tfrac{m}{s}$ waagerecht durch ein 50 cm breites homogenes Magnetfeld mit $B = 0{,}40\\,T$ gezogen. Die Feldlinien stehen senkrecht auf der Schleife. Die 10 cm lange Seite liegt parallel zum Feldrand.",
+   "abbildung": {
+    "typ": "skizze",
+    "beschreibung": "Draufsicht: graues Rechteck 50 cm breit (Magnetfeld, Kreuze für Feldlinien in die Zeichenebene), links davon eine Leiterschleife 20 cm × 10 cm mit Geschwindigkeitspfeil v nach rechts."
+   },
+   "teile": [
+    {
+     "text": "Berechne, wie lange das Eintreten in das Feld dauert.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.4,
+      "einheit": "s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Welchen Weg legt die Schleife zurück, bis sie ganz im Feld ist?",
+      "Die Schleife ist ganz im Feld, wenn sie um ihre Länge von 20 cm eingetreten ist."
+     ],
+     "loesung": [
+      "$t = \\dfrac{0{,}20\\,m}{0{,}50\\,\\tfrac{m}{s}} = 0{,}40\\,s$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne den Betrag der induzierten Spannung beim Eintreten.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.02,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "betrag_ok"
+     },
+     "hilfen": [
+      "Welche Seite der Schleife schneidet beim Eintreten die Feldlinien?",
+      "Nur die vordere 10 cm lange Seite ist im Feld. Es gilt $U = B \\cdot l \\cdot v$ mit l = 0,10 m.",
+      "$U = 0{,}40\\,T \\cdot 0{,}10\\,m \\cdot 0{,}50\\,\\tfrac{m}{s}$"
+     ],
+     "loesung": [
+      "Gleichwertig über die Flächenänderung: $|U| = B \\cdot A' = B \\cdot l \\cdot v$",
+      "$|U| = 0{,}40\\,T \\cdot 0{,}10\\,m \\cdot 0{,}50\\,\\tfrac{m}{s} = 0{,}020\\,V$"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Ein Mitschüler behauptet: „Wenn die Schleife ganz im Feld ist, ist die Spannung am größten, weil dann der Fluss am größten ist.“ Nimm Stellung.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Aussage ist falsch: Ganz im Feld ist der Fluss zwar am größten, aber konstant.",
+       "Induziert wird nur bei Änderung des Flusses, die Spannung ist dann 0.",
+       "Beim Austreten nimmt der Fluss ab, die Spannung hat den gleichen Betrag und das entgegengesetzte Vorzeichen wie beim Eintreten."
+      ]
+     },
+     "hilfen": [
+      "Wovon hängt die Induktionsspannung ab: vom Fluss oder von seiner Änderung?",
+      "Ändert sich der Fluss, solange die Schleife ganz im Feld ist?",
+      "Vergleiche Eintreten, ganz im Feld und Austreten."
+     ],
+     "loesung": [
+      "Fluss ganz im Feld maximal, aber konstant: $U = 0$",
+      "Eintreten: Fluss wächst, $|U| = 20\\,mV$. Austreten: Fluss sinkt, $|U| = 20\\,mV$ mit umgekehrtem Vorzeichen",
+      "entscheidend ist die Änderungsrate des Flusses, nicht sein Wert"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "I2-G1",
+   "thema": "I2",
+   "stufe": "G",
+   "titel": "Spule im veränderlichen Magnetfeld",
+   "kontext": "Eine Spule mit 300 Windungen und $30\\,cm^2$ Querschnittsfläche steht senkrecht im Magnetfeld. Das Diagramm zeigt die Flussdichte.",
+   "abbildung": {
+    "typ": "bt_diagramm",
+    "punkte": [
+     [
+      0,
+      0
+     ],
+     [
+      3.0,
+      0.6
+     ],
+     [
+      5.0,
+      0.6
+     ],
+     [
+      6.5,
+      0
+     ],
+     [
+      8.0,
+      0
+     ]
+    ],
+    "achse_x": "t in s",
+    "achse_y": "B in T",
+    "abschnitte": [
+     [
+      "I",
+      0,
+      3.0
+     ],
+     [
+      "II",
+      3.0,
+      5.0
+     ],
+     [
+      "III",
+      5.0,
+      6.5
+     ]
+    ]
+   },
+   "teile": [
+    {
+     "text": "Berechne die Spannung im Abschnitt I (0 bis 3,0 s).",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": -0.18,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "betrag_ok"
+     },
+     "hilfen": [
+      "Die Fläche ist konstant, nur B ändert sich.",
+      "$U = -n \\cdot A \\cdot \\dfrac{\\Delta B}{\\Delta t}$ mit $A = 30 \\cdot 10^{-4}\\,m^2$",
+      "$\\Delta B = 0{,}60\\,T$ in $\\Delta t = 3{,}0\\,s$"
+     ],
+     "loesung": [
+      "$A = 3{,}0 \\cdot 10^{-3}\\,m^2$",
+      "$U = -300 \\cdot 3{,}0 \\cdot 10^{-3}\\,m^2 \\cdot \\dfrac{0{,}60\\,T}{3{,}0\\,s} = -0{,}18\\,V$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Gib die Spannung im Abschnitt II (3,0 s bis 5,0 s) an.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.0,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Ändert sich der Fluss in diesem Abschnitt?"
+     ],
+     "loesung": [
+      "B ist konstant, der Fluss ändert sich nicht: $U = 0$"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Berechne die Spannung im Abschnitt III (5,0 s bis 6,5 s).",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.36,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "betrag_ok"
+     },
+     "hilfen": [
+      "Wie groß ist ΔB und in welcher Zeit?",
+      "B fällt um 0,60 T in 1,5 s. Fallender Fluss gibt positive Spannung.",
+      "Die Änderung ist doppelt so schnell wie in Abschnitt I."
+     ],
+     "loesung": [
+      "$U = -300 \\cdot 3{,}0 \\cdot 10^{-3}\\,m^2 \\cdot \\dfrac{-0{,}60\\,T}{1{,}5\\,s} = +0{,}36\\,V$"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "I2-G2",
+   "thema": "I2",
+   "stufe": "G",
+   "titel": "Magnetischer Fluss",
+   "kontext": "Eine Leiterschleife mit $50\\,cm^2$ Fläche liegt in einem Magnetfeld mit $B = 0{,}80\\,T$. Flächennormale und Feldlinien schließen 60° ein.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne den magnetischen Fluss in mVs.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 2.0,
+      "einheit": "mVs",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Nur die Komponente von B entlang der Flächennormalen zählt.",
+      "$\\Phi = B \\cdot A \\cdot \\cos\\varphi$ mit $A = 50 \\cdot 10^{-4}\\,m^2$",
+      "Der Taschenrechner muss auf Grad (DEG) stehen."
+     ],
+     "loesung": [
+      "$\\Phi = 0{,}80\\,T \\cdot 5{,}0 \\cdot 10^{-3}\\,m^2 \\cdot \\cos 60° = 2{,}0 \\cdot 10^{-3}\\,Vs = 2{,}0\\,mVs$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Bei welchem Winkel zwischen Flächennormale und Feldlinien ist der Fluss am größten?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "0°",
+       "45°",
+       "90°",
+       "180° und 90° gleich"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Für welchen Winkel ist $\\cos\\varphi$ am größten?"
+     ],
+     "loesung": [
+      "$\\cos 0° = 1$: Die Feldlinien durchsetzen die Fläche senkrecht."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I2-A",
+   "thema": "I2",
+   "stufe": "A",
+   "titel": "Generator",
+   "kontext": "In einem Generator dreht sich eine Spule (200 Windungen, $40\\,cm^2$) mit 50 Umdrehungen je Sekunde in einem homogenen Magnetfeld mit $B = 0{,}25\\,T$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne den größten magnetischen Fluss durch eine Windung in mVs.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.0,
+      "einheit": "mVs",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Wann durchsetzt das Feld die Spulenfläche vollständig?",
+      "$\\Phi_{max} = B \\cdot A$"
+     ],
+     "loesung": [
+      "$\\Phi_{max} = 0{,}25\\,T \\cdot 4{,}0 \\cdot 10^{-3}\\,m^2 = 1{,}0\\,mVs$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Gib die Frequenz der erzeugten Wechselspannung an.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 50.0,
+      "einheit": "Hz",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Wie oft wiederholt sich die Flussänderung bei einer Umdrehung?"
+     ],
+     "loesung": [
+      "Eine Umdrehung ergibt eine Periode der Spannung: $f = 50\\,Hz$"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Erkläre, warum die Spannung am größten ist, wenn die Spulenfläche parallel zu den Feldlinien steht, obwohl der Fluss dann null ist.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Induziert wird nach dem Induktionsgesetz durch die Änderungsrate des Flusses, nicht durch den Fluss.",
+       "In dieser Stellung ändert sich der Fluss am schnellsten, deshalb ist die Spannung am größten."
+      ]
+     },
+     "hilfen": [
+      "Wovon hängt U im Induktionsgesetz ab?",
+      "Zeichne Φ(t) als Kosinus. Wo ist die Kurve am steilsten?"
+     ],
+     "loesung": [
+      "$U = -n \\cdot \\Phi'$: entscheidend ist die Steigung von Φ(t)",
+      "Φ(t) ist bei Φ = 0 am steilsten, dort ist |U| am größten"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "I2-Z",
+   "thema": "I2",
+   "stufe": "Z",
+   "titel": "Zwei Wege zur gleichen Gleichung",
+   "kontext": "Ein Leiterbügel der Länge l gleitet mit der Geschwindigkeit v auf zwei Schienen. Bügel und Schienen bilden eine Leiterschleife, deren Fläche wächst. Das Magnetfeld B steht senkrecht auf der Schleife und ist konstant.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Zeige mit dem Induktionsgesetz $U = -n \\cdot B \\cdot A'$, dass für den Betrag der Spannung $U = B \\cdot l \\cdot v$ gilt. Notiere hinter jedem Schritt, was du tust.",
+     "be": 4,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Schleife hat eine Windung: n = 1.",
+       "In der Zeit Δt wächst die Fläche um $\\Delta A = l \\cdot v \\cdot \\Delta t$.",
+       "Daraus folgt $A' = \\dfrac{\\Delta A}{\\Delta t} = l \\cdot v$.",
+       "Eingesetzt: $|U| = B \\cdot l \\cdot v$, dasselbe Ergebnis wie über die Lorentzkraft."
+      ]
+     },
+     "hilfen": [
+      "Welche Größe ändert sich hier, B oder A?",
+      "Um wie viel wächst die Fläche, wenn der Bügel die Strecke $v \\cdot \\Delta t$ zurücklegt?",
+      "Setze $A' = l \\cdot v$ in das Induktionsgesetz ein."
+     ],
+     "loesung": [
+      "n = 1, B konstant",
+      "$\\Delta A = l \\cdot v \\cdot \\Delta t$  |  Fläche des überstrichenen Rechtecks",
+      "$A' = l \\cdot v$  |  durch Δt geteilt",
+      "$|U| = B \\cdot l \\cdot v$  |  eingesetzt"
+     ],
+     "id": "a"
+    }
+   ]
+  },
+  {
+   "id": "I3-G1",
+   "thema": "I3",
+   "stufe": "G",
+   "titel": "Magnet im Kupferrohr",
+   "kontext": "Ein Stabmagnet fällt einmal durch ein Kupferrohr und einmal durch ein gleich großes Kunststoffrohr.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Vergleiche die Fallzeiten.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Im Kupferrohr fällt er deutlich langsamer.",
+       "Im Kunststoffrohr fällt er deutlich langsamer.",
+       "Die Fallzeiten sind gleich.",
+       "Im Kupferrohr bleibt er stecken."
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "In welchem Rohr können Ströme fließen?"
+     ],
+     "loesung": [
+      "Nur im leitenden Kupfer werden Ströme induziert, die den Magneten bremsen."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Erkläre die Beobachtung mit der Lenz’schen Regel.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Der fallende Magnet ändert den Fluss durch die Rohrwand, im Kupfer werden Wirbelströme induziert.",
+       "Nach der Lenz’schen Regel wirkt ihr Magnetfeld der Ursache, der Bewegung des Magneten, entgegen und bremst ihn. Kunststoff leitet nicht."
+      ]
+     },
+     "hilfen": [
+      "Was ändert sich in der Rohrwand, wenn der Magnet vorbeifällt?",
+      "Wogegen richtet sich das Magnetfeld der induzierten Ströme?"
+     ],
+     "loesung": [
+      "Flussänderung in der Rohrwand, Wirbelströme im Kupfer",
+      "Lenz: Magnetfeld der Wirbelströme bremst den Magneten"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I3-G2",
+   "thema": "I3",
+   "stufe": "G",
+   "titel": "Einschalten mit Spule",
+   "kontext": "Zwei Glühlampen werden gleichzeitig eingeschaltet. Vor der ersten liegt eine Spule mit Eisenkern, vor der zweiten ein ohmscher Widerstand gleicher Größe.",
+   "abbildung": {
+    "typ": "skizze",
+    "beschreibung": "Zwei parallele Stromkreise an einer Gleichspannungsquelle mit gemeinsamem Schalter: Lampe 1 mit Spule (Eisenkern), Lampe 2 mit Widerstand."
+   },
+   "teile": [
+    {
+     "text": "Welche Beschreibung des I(t)-Verlaufs ist richtig?",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Widerstand: Sprung auf den Endwert. Spule: verzögerter Anstieg auf denselben Endwert.",
+       "Widerstand: Sprung auf den Endwert. Spule: verzögerter Anstieg auf einen kleineren Endwert.",
+       "Spule: Sprung auf den Endwert. Widerstand: verzögerter Anstieg.",
+       "Beide steigen gleich schnell an."
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Begrenzt die Spule im eingeschalteten Zustand den Strom stärker als der Widerstand?",
+      "Am Ende fließt Gleichstrom, die Spule wirkt nur noch mit ihrem Widerstand."
+     ],
+     "loesung": [
+      "Widerstandskreis: Stromstärke springt sofort auf den Endwert.",
+      "Spulenkreis: verzögerter Anstieg auf denselben Endwert, weil beide gleich große Widerstände haben."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Erkläre den Unterschied. Verwende die Begriffe Magnetfeldänderung, Selbstinduktion und Lenz’sche Regel.",
+     "be": 3,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Beim Einschalten baut sich das Magnetfeld der Spule auf: Magnetfeldänderung.",
+       "Die Änderung induziert in der Spule selbst eine Spannung: Selbstinduktion.",
+       "Nach der Lenz’schen Regel wirkt der Induktionsstrom seiner Ursache entgegen und hemmt den Anstieg der Stromstärke."
+      ]
+     },
+     "hilfen": [
+      "Was passiert beim Einschalten mit dem Magnetfeld der Spule?",
+      "Was bewirkt diese Änderung in der Spule selbst?",
+      "In welche Richtung wirkt der Induktionsstrom?"
+     ],
+     "loesung": [
+      "Magnetfeldänderung beim Einschalten",
+      "Selbstinduktion in der Spule",
+      "Lenz: hemmt den Stromanstieg"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I3-A",
+   "thema": "I3",
+   "stufe": "A",
+   "titel": "Thomson’scher Ringversuch",
+   "kontext": "Ein leichter Aluminiumring liegt locker auf einer Spule mit Eisenkern. Die Spule wird an eine Gleichspannungsquelle angeschlossen.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Erkläre, warum der Ring beim Einschalten hochspringt.",
+     "be": 3,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Beim Einschalten wächst der Fluss durch den Ring.",
+       "Im Ring wird ein Strom induziert.",
+       "Nach Lenz wirkt sein Magnetfeld dem Anstieg entgegen: Ring und Spule stoßen sich ab, die Kraft ist größer als die Gewichtskraft."
+      ]
+     },
+     "hilfen": [
+      "Was ändert sich beim Einschalten im Ring?",
+      "Wie ist das Magnetfeld des Ringstroms gerichtet?"
+     ],
+     "loesung": [
+      "Flussanstieg durch den Ring",
+      "Induktionsstrom im Ring",
+      "Lenz: Abstoßung, Ring springt"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Der Ring wird aufgeschlitzt. Was beobachtet man?",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Er bleibt liegen.",
+       "Er springt höher.",
+       "Er springt gleich hoch.",
+       "Er wird angezogen."
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Kann im geschlitzten Ring ein Strom im Kreis fließen?"
+     ],
+     "loesung": [
+      "Der Schlitz unterbricht die Strombahn, es fließt kein Ringstrom, es gibt keine Abstoßung."
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Der Ring liegt wieder ungeschlitzt auf der Spule. Was geschieht beim Ausschalten?",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Er wird kurz zur Spule hin gezogen.",
+       "Er springt hoch.",
+       "Es passiert nichts.",
+       "Er beginnt zu rotieren."
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Beim Ausschalten nimmt der Fluss ab. Wogegen richtet sich der Ringstrom jetzt?"
+     ],
+     "loesung": [
+      "Der Ringstrom wirkt der Abnahme entgegen: Sein Magnetfeld ist gleichsinnig mit dem der Spule, der Ring wird kurz angezogen."
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "I3-Z",
+   "thema": "I3",
+   "stufe": "Z",
+   "titel": "Magnet im langen Kupferrohr",
+   "kontext": "Ein starker Magnet fällt durch ein sehr langes senkrechtes Kupferrohr. Nach kurzer Zeit fällt er mit konstanter Geschwindigkeit.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Erkläre, warum sich eine konstante Geschwindigkeit einstellt.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Bremskraft der Wirbelströme wächst mit der Geschwindigkeit, weil sich der Fluss dann schneller ändert.",
+       "Der Magnet wird schneller, bis die Bremskraft so groß ist wie die Gewichtskraft.",
+       "Dann ist die resultierende Kraft null, die Geschwindigkeit bleibt konstant."
+      ]
+     },
+     "hilfen": [
+      "Wovon hängt die Stärke der Wirbelströme ab?",
+      "Welche Kräfte wirken auf den Magneten und wann heben sie sich auf?"
+     ],
+     "loesung": [
+      "Bremskraft wächst mit v (schnellere Flussänderung)",
+      "Gleichgewicht Bremskraft = Gewichtskraft",
+      "resultierende Kraft null"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Beurteile die Energiebilanz während des Falls mit konstanter Geschwindigkeit.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die kinetische Energie bleibt konstant, die potentielle Energie nimmt ab.",
+       "Die Energie wird über die Wirbelströme in thermische Energie des Rohres umgewandelt. Die Energie bleibt erhalten."
+      ]
+     },
+     "hilfen": [
+      "Welche Energieform nimmt ab, welche bleibt gleich?",
+      "Was bewirken die Wirbelströme im Kupfer?"
+     ],
+     "loesung": [
+      "E_kin konstant, Lageenergie nimmt ab",
+      "Umwandlung in thermische Energie des Rohres, Energieerhaltung"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I4-G1",
+   "thema": "I4",
+   "stufe": "G",
+   "titel": "Induktivität einer Spule",
+   "kontext": "Eine Luftspule hat 800 Windungen, die Länge 20 cm und die Querschnittsfläche $10\\,cm^2$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Induktivität in mH.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 4.0,
+      "einheit": "mH",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$L = \\mu_0 \\cdot \\mu_r \\cdot \\dfrac{n^2 \\cdot A}{l}$ mit $\\mu_r = 1$ für Luft",
+      "$\\mu_0 = 1{,}257 \\cdot 10^{-6}\\,\\tfrac{Vs}{Am}$, $A = 10 \\cdot 10^{-4}\\,m^2$",
+      "n wird quadriert: $800^2 = 640\\,000$"
+     ],
+     "loesung": [
+      "$L = 1{,}257 \\cdot 10^{-6}\\,\\tfrac{Vs}{Am} \\cdot \\dfrac{640\\,000 \\cdot 1{,}0 \\cdot 10^{-3}\\,m^2}{0{,}20\\,m} \\approx 4{,}0\\,mH$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Ein Eisenkern mit $\\mu_r = 500$ wird eingeschoben. Berechne die neue Induktivität in H.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 2.0,
+      "einheit": "H",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "L ist proportional zu $\\mu_r$."
+     ],
+     "loesung": [
+      "$L = 500 \\cdot 4{,}0\\,mH = 2{,}0\\,H$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I4-G2",
+   "thema": "I4",
+   "stufe": "G",
+   "titel": "Abschaltspannung",
+   "kontext": "Durch eine Spule mit $L = 0{,}60\\,H$ fließen 3,0 A. Beim Öffnen des Schalters sinkt die Stromstärke in 15 ms auf null.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne den Betrag der induzierten Spannung.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 120.0,
+      "einheit": "V",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "betrag_ok"
+     },
+     "hilfen": [
+      "$U = -L \\cdot \\dfrac{\\Delta I}{\\Delta t}$",
+      "$\\Delta I = -3{,}0\\,A$, $\\Delta t = 0{,}015\\,s$"
+     ],
+     "loesung": [
+      "$|U| = 0{,}60\\,H \\cdot \\dfrac{3{,}0\\,A}{0{,}015\\,s} = 120\\,V$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Der Strom wird stattdessen in 30 ms abgeschaltet. Die Spannung …",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "halbiert sich",
+       "verdoppelt sich",
+       "bleibt gleich",
+       "viertelt sich"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Wie hängt U von Δt ab?"
+     ],
+     "loesung": [
+      "U ist umgekehrt proportional zu Δt: doppelte Zeit, halbe Spannung, 60 V."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I4-A",
+   "thema": "I4",
+   "stufe": "A",
+   "titel": "Weidezaungerät",
+   "kontext": "Ein Weidezaungerät enthält eine Spule mit $L = 0{,}80\\,H$. Ein Strom von 1,5 A wird periodisch in 0,20 ms unterbrochen.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne den Betrag der Spannung in kV.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 6.0,
+      "einheit": "kV",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "betrag_ok"
+     },
+     "hilfen": [
+      "Gleiche Gleichung wie bei der Abschaltspannung.",
+      "0,20 ms = $0{,}20 \\cdot 10^{-3}\\,s$"
+     ],
+     "loesung": [
+      "$|U| = 0{,}80\\,H \\cdot \\dfrac{1{,}5\\,A}{0{,}20 \\cdot 10^{-3}\\,s} = 6{,}0\\,kV$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Begründe mit der Gleichung, warum der Strom möglichst schnell unterbrochen werden muss.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Spannung ist umgekehrt proportional zur Abschaltzeit Δt.",
+       "Nur bei sehr kurzer Abschaltzeit entsteht die hohe Spannung, die der Zaun braucht."
+      ]
+     },
+     "hilfen": [
+      "Was passiert mit U, wenn Δt kleiner wird?"
+     ],
+     "loesung": [
+      "$|U| = L \\cdot \\dfrac{\\Delta I}{\\Delta t}$: kleines Δt, große Spannung",
+      "hohe Spannung nur bei schneller Unterbrechung"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I4-Z",
+   "thema": "I4",
+   "stufe": "Z",
+   "titel": "Induktivität vergrößern",
+   "kontext": "Eine Luftspule soll eine größere Induktivität bekommen. Zur Wahl stehen: Windungszahl bei gleicher Länge verdoppeln · Länge bei gleicher Windungszahl halbieren · Querschnittsfläche verdoppeln · Eisenkern mit $\\mu_r = 100$ einschieben.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Ordne zu: Um welchen Faktor wächst L bei Verdoppeln der Windungszahl?",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "4",
+       "2",
+       "8",
+       "1"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "n steht in der Gleichung im Quadrat."
+     ],
+     "loesung": [
+      "$L \\sim n^2$: Faktor 4"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Ein Mitschüler sagt: „Doppelte Windungszahl heißt doppelte Induktivität.“ Beurteile die Aussage und ordne alle vier Maßnahmen nach ihrer Wirkung.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Aussage ist falsch: L wächst mit $n^2$, also um den Faktor 4.",
+       "Reihenfolge: Eisenkern (Faktor 100), Windungszahl verdoppeln (4), Länge halbieren (2) und Fläche verdoppeln (2).",
+       "Begründung über die Exponenten bzw. Faktoren in der Gleichung."
+      ]
+     },
+     "hilfen": [
+      "Schreibe für jede Maßnahme den Faktor auf, um den L wächst.",
+      "Achte auf das Quadrat bei n und darauf, dass l im Nenner steht."
+     ],
+     "loesung": [
+      "falsch: Faktor 4 wegen $n^2$",
+      "Eisenkern 100 > n verdoppeln 4 > l halbieren 2 = A verdoppeln 2"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I5-G1",
+   "thema": "I5",
+   "stufe": "G",
+   "titel": "Netztransformator",
+   "kontext": "Ein Transformator setzt 230 V auf 6,0 V herunter. Die Primärspule hat 1150 Windungen.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Windungszahl der Sekundärspule.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 30.0,
+      "einheit": "",
+      "toleranz_rel": 0.001,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$\\dfrac{U_1}{U_2} = \\dfrac{n_1}{n_2}$ nach $n_2$ umstellen."
+     ],
+     "loesung": [
+      "$n_2 = n_1 \\cdot \\dfrac{U_2}{U_1} = 1150 \\cdot \\dfrac{6{,}0\\,V}{230\\,V} = 30$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Sekundär fließen 1,5 A. Berechne die primäre Stromstärke in mA (ideal).",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 39.0,
+      "einheit": "mA",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Beim idealen Transformator ist die Leistung auf beiden Seiten gleich.",
+      "$U_1 \\cdot I_1 = U_2 \\cdot I_2$"
+     ],
+     "loesung": [
+      "$I_1 = \\dfrac{U_2 \\cdot I_2}{U_1} = \\dfrac{6{,}0\\,V \\cdot 1{,}5\\,A}{230\\,V} \\approx 39\\,mA$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I5-G2",
+   "thema": "I5",
+   "stufe": "G",
+   "titel": "Fernleitung",
+   "kontext": "Ein Windpark liefert 5,0 MW. Die Leitung zum Umspannwerk hat den Widerstand 2,5 Ω.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Verlustleistung bei 10 kV in kW.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 625.0,
+      "einheit": "kW",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Zuerst die Stromstärke: $I = \\dfrac{P}{U}$",
+      "Dann $P_V = I^2 \\cdot R$"
+     ],
+     "loesung": [
+      "$I = \\dfrac{5{,}0 \\cdot 10^6\\,W}{10 \\cdot 10^3\\,V} = 500\\,A$",
+      "$P_V = (500\\,A)^2 \\cdot 2{,}5\\,\\Omega = 625\\,kW$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die Verlustleistung bei 110 kV in kW.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 5.2,
+      "einheit": "kW",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Gleicher Weg, andere Spannung.",
+      "11-fache Spannung bedeutet 1/11 der Stromstärke und 1/121 der Verluste."
+     ],
+     "loesung": [
+      "$I \\approx 45\\,A$, $P_V = I^2 \\cdot R \\approx 5{,}2\\,kW$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I5-A",
+   "thema": "I5",
+   "stufe": "A",
+   "titel": "Ladegerät",
+   "kontext": "Ein Ladegerät nimmt 7,5 W auf und gibt 5,0 V bei 1,2 A ab.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne den Wirkungsgrad in Prozent.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 80.0,
+      "einheit": "%",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$\\eta = \\dfrac{P_{ab}}{P_{auf}}$, $P_{ab} = U \\cdot I$"
+     ],
+     "loesung": [
+      "$P_{ab} = 5{,}0\\,V \\cdot 1{,}2\\,A = 6{,}0\\,W$",
+      "$\\eta = \\dfrac{6{,}0\\,W}{7{,}5\\,W} = 80\\,\\%$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Erkläre, wo die fehlende Leistung bleibt und stelle einen Bezug zur Beobachtung her, dass das Gerät warm wird.",
+     "be": 3,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Ein Teil wird in thermische Energie umgewandelt.",
+       "Ursachen: Widerstand der Wicklungen und Wirbelströme im Eisenkern.",
+       "Diese thermische Energie macht sich als Erwärmung des Gerätes bemerkbar."
+      ]
+     },
+     "hilfen": [
+      "In welche Energieform wird der Rest umgewandelt?",
+      "Wo im Transformator entsteht sie?"
+     ],
+     "loesung": [
+      "1,5 W werden in thermische Energie umgewandelt",
+      "Wicklungswiderstand und Wirbelströme",
+      "Erwärmung des Gerätes"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I5-Z",
+   "thema": "I5",
+   "stufe": "Z",
+   "titel": "Transformator an der Autobatterie",
+   "kontext": "Jemand schließt einen Transformator ($n_1 = 500$, $n_2 = 5000$) an eine 12-V-Autobatterie an und erwartet sekundär 120 V.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Beurteile die Erwartung.",
+     "be": 4,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Batterie liefert Gleichspannung, im Betrieb fließt ein konstanter Strom.",
+       "Das Magnetfeld im Eisenkern ist konstant, der Fluss durch die Sekundärspule ändert sich nicht.",
+       "Nach dem Induktionsgesetz wird sekundär keine Spannung induziert, nicht 120 V.",
+       "Nur beim Ein- und Ausschalten ändert sich der Fluss, dann entstehen kurze Spannungsstöße."
+      ]
+     },
+     "hilfen": [
+      "Welche Art Spannung liefert eine Batterie?",
+      "Was braucht die Sekundärspule nach dem Induktionsgesetz?",
+      "Gibt es Momente, in denen sich der Fluss doch ändert?"
+     ],
+     "loesung": [
+      "Gleichspannung, konstanter Strom",
+      "Fluss konstant",
+      "keine Spannung im Dauerbetrieb",
+      "kurze Stöße beim Schalten"
+     ],
+     "id": "a"
+    }
+   ]
+  },
+  {
+   "id": "I6-G1",
+   "thema": "I6",
+   "stufe": "G",
+   "titel": "Periodendauer eines Schwingkreises",
+   "kontext": "Ein Schwingkreis besteht aus einer Spule mit $L = 5{,}0\\,mH$ und einem Kondensator mit $C = 2{,}2\\,\\mu F$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Periodendauer in ms.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.66,
+      "einheit": "ms",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Thomson’sche Gleichung",
+      "$T = 2\\pi \\cdot \\sqrt{L \\cdot C}$ mit $L = 5{,}0 \\cdot 10^{-3}\\,H$, $C = 2{,}2 \\cdot 10^{-6}\\,F$"
+     ],
+     "loesung": [
+      "$T = 2\\pi \\cdot \\sqrt{5{,}0 \\cdot 10^{-3}\\,H \\cdot 2{,}2 \\cdot 10^{-6}\\,F} \\approx 0{,}66\\,ms$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die Frequenz in kHz.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.5,
+      "einheit": "kHz",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$f = \\dfrac{1}{T}$"
+     ],
+     "loesung": [
+      "$f = \\dfrac{1}{0{,}66\\,ms} \\approx 1{,}5\\,kHz$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I6-G2",
+   "thema": "I6",
+   "stufe": "G",
+   "titel": "Kapazität gesucht",
+   "kontext": "Ein Schwingkreis mit einer Spule von $L = 10\\,mH$ soll mit $f = 1{,}0\\,kHz$ schwingen.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die nötige Kapazität in µF.",
+     "be": 3,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 2.5,
+      "einheit": "µF",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Aus f folgt T. Dann $T = 2\\pi\\sqrt{L C}$ nach C umstellen.",
+      "Quadrieren: $T^2 = 4\\pi^2 \\cdot L \\cdot C$",
+      "$C = \\dfrac{T^2}{4\\pi^2 \\cdot L}$ mit $T = 1{,}0\\,ms$"
+     ],
+     "loesung": [
+      "$T = \\dfrac{1}{f} = 1{,}0 \\cdot 10^{-3}\\,s$",
+      "$C = \\dfrac{T^2}{4\\pi^2 \\cdot L}$  |  quadriert und umgestellt",
+      "$C = \\dfrac{(1{,}0 \\cdot 10^{-3}\\,s)^2}{4\\pi^2 \\cdot 0{,}010\\,H} \\approx 2{,}5\\,\\mu F$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Die Kapazität wird vervierfacht. Die Frequenz …",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "halbiert sich",
+       "viertelt sich",
+       "verdoppelt sich",
+       "bleibt gleich"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "T wächst mit der Wurzel aus C."
+     ],
+     "loesung": [
+      "$T \\sim \\sqrt{C}$: vierfache Kapazität, doppelte Periodendauer, halbe Frequenz."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I6-A",
+   "thema": "I6",
+   "stufe": "A",
+   "titel": "Metallsuchgerät",
+   "kontext": "Ein Metallsuchgerät enthält einen Schwingkreis mit $L = 1{,}2\\,mH$ und $C = 10\\,nF$. Liegt Metall unter dem Suchrahmen, wächst die Induktivität um 2 %.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Frequenz ohne Metall in kHz.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 45.9,
+      "einheit": "kHz",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$f = \\dfrac{1}{2\\pi\\sqrt{L C}}$",
+      "$1\\,nF = 10^{-9}\\,F$"
+     ],
+     "loesung": [
+      "$f = \\dfrac{1}{2\\pi\\sqrt{1{,}2 \\cdot 10^{-3}\\,H \\cdot 10 \\cdot 10^{-9}\\,F}} \\approx 46\\,kHz$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne, um wie viel Prozent die Frequenz mit Metall sinkt.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.0,
+      "einheit": "%",
+      "toleranz_rel": 0.08,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Wie hängt f von L ab?",
+      "$f \\sim \\dfrac{1}{\\sqrt{L}}$: neue Frequenz $f' = \\dfrac{f}{\\sqrt{1{,}02}}$"
+     ],
+     "loesung": [
+      "$\\dfrac{f'}{f} = \\dfrac{1}{\\sqrt{1{,}02}} \\approx 0{,}990$",
+      "Die Frequenz sinkt um etwa 1,0 %."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "I6-Z",
+   "thema": "I6",
+   "stufe": "Z",
+   "titel": "Federschwinger und Schwingkreis",
+   "kontext": "Ein Federschwinger ($m = 0{,}50\\,kg$, $D = 20\\,\\tfrac{N}{m}$) und ein Schwingkreis mit $L = 0{,}50\\,H$ sollen dieselbe Periodendauer haben.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die nötige Kapazität in F.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.05,
+      "einheit": "F",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Setze die beiden Periodendauern gleich.",
+      "$2\\pi\\sqrt{\\tfrac{m}{D}} = 2\\pi\\sqrt{L C}$, also $L \\cdot C = \\dfrac{m}{D}$"
+     ],
+     "loesung": [
+      "$C = \\dfrac{m}{D \\cdot L} = \\dfrac{0{,}50\\,kg}{20\\,\\tfrac{N}{m} \\cdot 0{,}50\\,H} = 0{,}050\\,F$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Vergleiche die Energieumwandlungen in beiden Schwingern und gib an, welche Größen einander entsprechen.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Federschwinger: potentielle Energie im Umkehrpunkt, kinetische Energie in der Ruhelage.",
+       "Schwingkreis: Energie des elektrischen Feldes bei voll geladenem Kondensator, Energie des magnetischen Feldes bei größter Stromstärke.",
+       "Entsprechungen begründet: y und Q, v und I, m und L, D und 1/C, Reibung und ohmscher Widerstand."
+      ]
+     },
+     "hilfen": [
+      "Wo steckt die Energie in den Umkehrpunkten bzw. bei vollem Kondensator?",
+      "Welche Größe des Schwingkreises verhält sich wie die Geschwindigkeit?"
+     ],
+     "loesung": [
+      "Feder: potentiell ↔ kinetisch",
+      "Kreis: elektrisches ↔ magnetisches Feld",
+      "y ↔ Q, v ↔ I, m ↔ L, D ↔ 1/C"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S1-G1",
+   "thema": "S1",
+   "stufe": "G",
+   "titel": "y(t)-Diagramm ablesen",
+   "kontext": "Das Diagramm zeigt die Elongation eines Federschwingers.",
+   "abbildung": {
+    "typ": "yt_diagramm",
+    "funktion": "sin",
+    "ymax": 2.5,
+    "T": 0.8,
+    "tmax": 2.0,
+    "einheit_y": "cm",
+    "raster": true
+   },
+   "teile": [
+    {
+     "text": "Lies die Amplitude in cm ab.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 2.5,
+      "einheit": "cm",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Die Amplitude ist die größte Elongation, gemessen von der Ruhelage aus."
+     ],
+     "loesung": [
+      "$y_{max} = 2{,}5\\,cm$, nicht der Abstand zwischen Berg und Tal"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Lies die Periodendauer in s ab.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.8,
+      "einheit": "s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Miss den Abstand zwischen zwei gleichen Zuständen, zum Beispiel zwei Maxima."
+     ],
+     "loesung": [
+      "$T = 0{,}80\\,s$"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Berechne die Frequenz.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.25,
+      "einheit": "Hz",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$f = \\dfrac{1}{T}$"
+     ],
+     "loesung": [
+      "$f = \\dfrac{1}{0{,}80\\,s} = 1{,}25\\,Hz$"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S1-G2",
+   "thema": "S1",
+   "stufe": "G",
+   "titel": "Schwingung oder nur periodisch?",
+   "kontext": "Nicht jede periodische Bewegung ist eine Schwingung.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Wähle alle Schwingungen aus.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Fadenpendel",
+       "Herzschlag",
+       "Erde um die Sonne",
+       "Stimmgabel",
+       "prallender Ball",
+       "Boje auf dem Wasser"
+      ],
+      "richtig": [
+       0,
+       3,
+       5
+      ],
+      "mehrfach": true
+     },
+     "hilfen": [
+      "Eine Schwingung ist eine periodische Bewegung um eine stabile Gleichgewichtslage."
+     ],
+     "loesung": [
+      "Schwingungen: Fadenpendel, Stimmgabel, Boje.",
+      "Nur periodisch: Herzschlag, Erdumlauf, prallender Ball."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Nenne die zwei Voraussetzungen für eine Schwingung.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "stabile Gleichgewichtslage",
+       "Rückstellkraft zur Ruhelage hin"
+      ]
+     },
+     "hilfen": [
+      "Wohin kehrt ein Schwinger immer wieder zurück?",
+      "Welche Kraft treibt ihn dorthin?"
+     ],
+     "loesung": [
+      "stabile Gleichgewichtslage (Ruhelage)",
+      "Rückstellkraft zur Ruhelage hin"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S1-A",
+   "thema": "S1",
+   "stufe": "A",
+   "titel": "Harmonisch oder nicht?",
+   "kontext": "An einer Feder wird gemessen, welche Kraft man für verschiedene Auslenkungen aus der Ruhelage braucht: 1,0 cm: 0,40 N · 2,0 cm: 0,80 N · 3,0 cm: 1,20 N.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Welcher Zusammenhang liegt vor?",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "F ist proportional zu y",
+       "F ist konstant",
+       "F wächst mit y²",
+       "F ist umgekehrt proportional zu y"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Bilde die Quotienten F/y."
+     ],
+     "loesung": [
+      "F/y = 40 N/m in allen Zeilen: Die Rückstellkraft ist proportional zur Elongation."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Begründe, ob ein Körper an dieser Feder harmonisch schwingt.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Rückstellkraft proportional zur Elongation (lineares Kraftgesetz).",
+       "Deshalb ist die Schwingung harmonisch, ihr y(t)-Diagramm ist eine Sinuskurve."
+      ]
+     },
+     "hilfen": [
+      "Welche Bedingung muss die Rückstellkraft für eine harmonische Schwingung erfüllen?"
+     ],
+     "loesung": [
+      "F ~ y",
+      "harmonisch, Sinusverlauf"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S1-Z",
+   "thema": "S1",
+   "stufe": "Z",
+   "titel": "EKG",
+   "kontext": "Eine Schülerin sagt: „Der Herzschlag ist eine harmonische Schwingung, das sieht man am EKG.“",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Nimm Stellung.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Der Herzschlag ist periodisch.",
+       "Er ist keine Schwingung, weil es keine Bewegung um eine stabile Gleichgewichtslage mit Rückstellkraft gibt.",
+       "Die EKG-Kurve ist keine Sinuskurve, also auch nicht harmonisch."
+      ]
+     },
+     "hilfen": [
+      "Prüfe die drei Begriffe periodisch, Schwingung und harmonisch nacheinander."
+     ],
+     "loesung": [
+      "periodisch: ja",
+      "Schwingung: nein (keine Ruhelage, keine Rückstellkraft)",
+      "harmonisch: nein (kein Sinusverlauf)"
+     ],
+     "id": "a"
+    }
+   ]
+  },
+  {
+   "id": "S2-G1",
+   "thema": "S2",
+   "stufe": "G",
+   "titel": "Periodendauer berechnen",
+   "kontext": "Ein Körper der Masse 250 g schwingt an einer Feder mit $D = 40\\,\\tfrac{N}{m}$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Periodendauer.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.5,
+      "einheit": "s",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$T = 2\\pi \\cdot \\sqrt{\\dfrac{m}{D}}$, Masse in kg"
+     ],
+     "loesung": [
+      "$T = 2\\pi \\cdot \\sqrt{\\dfrac{0{,}250\\,kg}{40\\,\\tfrac{N}{m}}} \\approx 0{,}50\\,s$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Der Körper wird doppelt so weit ausgelenkt. Die Periodendauer …",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "bleibt gleich",
+       "verdoppelt sich",
+       "halbiert sich",
+       "wächst um den Faktor √2"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Kommt die Amplitude in der Gleichung vor?"
+     ],
+     "loesung": [
+      "T hängt nur von m und D ab, nicht von der Amplitude."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S2-G2",
+   "thema": "S2",
+   "stufe": "G",
+   "titel": "Federhärte aus der Messung",
+   "kontext": "Ein Körper der Masse 300 g schwingt an einer Feder. Für 20 Schwingungen misst man 14,0 s.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Federhärte.",
+     "be": 3,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 24.2,
+      "einheit": "N/m",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Zuerst T aus der Messung.",
+      "$T = 2\\pi\\sqrt{\\tfrac{m}{D}}$ quadrieren und nach D umstellen.",
+      "$D = \\dfrac{4\\pi^2 \\cdot m}{T^2}$"
+     ],
+     "loesung": [
+      "$T = \\dfrac{14{,}0\\,s}{20} = 0{,}700\\,s$",
+      "$D = \\dfrac{4\\pi^2 \\cdot 0{,}300\\,kg}{(0{,}700\\,s)^2} \\approx 24{,}2\\,\\tfrac{N}{m}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Gib ohne neue Rechnung an, welche Masse man für T = 1,4 s braucht.",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.2,
+      "einheit": "kg",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "T wächst mit der Wurzel aus m. Doppelte Periodendauer braucht …"
+     ],
+     "loesung": [
+      "Doppelte Periodendauer braucht die vierfache Masse: 1,2 kg"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S2-A",
+   "thema": "S2",
+   "stufe": "A",
+   "titel": "Massebestimmung auf der Raumstation",
+   "kontext": "Auf einer Raumstation wird die Masse eines Astronauten mit einem Federschwinger bestimmt. Die Federhärte beträgt $1800\\,\\tfrac{N}{m}$, die Periodendauer 1,30 s.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Masse.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 77.1,
+      "einheit": "kg",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$T = 2\\pi\\sqrt{\\tfrac{m}{D}}$ nach m umstellen.",
+      "$m = \\dfrac{D \\cdot T^2}{4\\pi^2}$"
+     ],
+     "loesung": [
+      "$m = \\dfrac{1800\\,\\tfrac{N}{m} \\cdot (1{,}30\\,s)^2}{4\\pi^2} \\approx 77\\,kg$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Begründe, warum eine Personenwaage dort nicht funktioniert, der Federschwinger aber schon.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Personenwaage misst die Gewichtskraft. Auf der Raumstation drückt der Astronaut nicht auf die Waage.",
+       "Die Periodendauer hängt nur von m und D ab, nicht von g."
+      ]
+     },
+     "hilfen": [
+      "Was misst eine Personenwaage eigentlich?",
+      "Kommt g in der Gleichung für T vor?"
+     ],
+     "loesung": [
+      "Waage braucht die Gewichtskraft auf die Unterlage",
+      "T hängt nicht von g ab"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S2-Z",
+   "thema": "S2",
+   "stufe": "Z",
+   "titel": "Periodendauer aus der Dehnung",
+   "kontext": "Ein Körper hängt ruhig an einer Feder. Die Feder ist dabei um $s_0$ gedehnt.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Zeige, dass $T = 2\\pi \\cdot \\sqrt{\\dfrac{s_0}{g}}$ gilt.",
+     "be": 3,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "In der Ruhelage gilt das Kräftegleichgewicht $m \\cdot g = D \\cdot s_0$.",
+       "Umgestellt: $\\dfrac{m}{D} = \\dfrac{s_0}{g}$.",
+       "Eingesetzt in $T = 2\\pi\\sqrt{\\tfrac{m}{D}}$ folgt die Gleichung."
+      ]
+     },
+     "hilfen": [
+      "Welche Kräfte sind in der Ruhelage im Gleichgewicht?",
+      "Forme so um, dass m/D allein steht."
+     ],
+     "loesung": [
+      "$m \\cdot g = D \\cdot s_0$  |  Kräftegleichgewicht",
+      "$\\dfrac{m}{D} = \\dfrac{s_0}{g}$  |  umgestellt",
+      "$T = 2\\pi\\sqrt{\\dfrac{s_0}{g}}$  |  eingesetzt"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne T für $s_0 = 25\\,cm$.",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.0,
+      "einheit": "s",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$s_0$ in Meter, $g = 9{,}81\\,\\tfrac{m}{s^2}$"
+     ],
+     "loesung": [
+      "$T = 2\\pi\\sqrt{\\dfrac{0{,}25\\,m}{9{,}81\\,\\tfrac{m}{s^2}}} \\approx 1{,}0\\,s$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S3-G1",
+   "thema": "S3",
+   "stufe": "G",
+   "titel": "Energie und größte Geschwindigkeit",
+   "kontext": "Ein Körper der Masse 150 g schwingt an einer Feder mit $D = 60\\,\\tfrac{N}{m}$ mit der Amplitude 5,0 cm. Die Reibung ist vernachlässigbar.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Energie der Schwingung in J.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.07500000000000001,
+      "einheit": "J",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$E = \\tfrac{1}{2} \\cdot D \\cdot y_{max}^2$, Amplitude in m"
+     ],
+     "loesung": [
+      "$E = \\tfrac{1}{2} \\cdot 60\\,\\tfrac{N}{m} \\cdot (0{,}050\\,m)^2 = 0{,}075\\,J$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die größte Geschwindigkeit.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.0,
+      "einheit": "m/s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Wo ist die gesamte Energie kinetisch?",
+      "$\\tfrac{1}{2} \\cdot m \\cdot v_{max}^2 = E$ nach $v_{max}$ umstellen"
+     ],
+     "loesung": [
+      "$v_{max} = \\sqrt{\\dfrac{2E}{m}} = \\sqrt{\\dfrac{2 \\cdot 0{,}075\\,J}{0{,}15\\,kg}} = 1{,}0\\,\\tfrac{m}{s}$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S3-G2",
+   "thema": "S3",
+   "stufe": "G",
+   "titel": "Energie bei halber Auslenkung",
+   "kontext": "Der Körper aus Aufgabe S3-G1 ist gerade 2,5 cm aus der Ruhelage ausgelenkt.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die kinetische Energie in J.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.056,
+      "einheit": "J",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Die potentielle Energie bei y ist $\\tfrac{1}{2} \\cdot D \\cdot y^2$.",
+      "Halbe Auslenkung, ein Viertel der potentiellen Energie. Der Rest ist kinetisch."
+     ],
+     "loesung": [
+      "$E_{pot} = \\tfrac{1}{4} \\cdot 0{,}075\\,J \\approx 0{,}019\\,J$",
+      "$E_{kin} = \\tfrac{3}{4} \\cdot 0{,}075\\,J \\approx 0{,}056\\,J$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Häufiger Fehler: Welche Antwort entsteht, wenn man E_kin gleich der Hälfte setzt?",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "0,038 J",
+       "0,056 J",
+       "0,019 J",
+       "0,075 J"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Die Hälfte von 0,075 J"
+     ],
+     "loesung": [
+      "Die Hälfte wäre 0,038 J. Falsch, weil die Energie mit dem Quadrat der Auslenkung geht."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S3-A",
+   "thema": "S3",
+   "stufe": "A",
+   "titel": "Federwippe",
+   "kontext": "Ein Kind (30 kg) wippt auf einer Federwippe ($D = 3000\\,\\tfrac{N}{m}$) mit 8,0 cm Amplitude um die Ruhelage.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Energie der Schwingung.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 9.6,
+      "einheit": "J",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$E = \\tfrac{1}{2} \\cdot D \\cdot y_{max}^2$"
+     ],
+     "loesung": [
+      "$E = \\tfrac{1}{2} \\cdot 3000\\,\\tfrac{N}{m} \\cdot (0{,}080\\,m)^2 = 9{,}6\\,J$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die größte Geschwindigkeit.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.8,
+      "einheit": "m/s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$v_{max} = \\sqrt{\\dfrac{2E}{m}}$"
+     ],
+     "loesung": [
+      "$v_{max} = \\sqrt{\\dfrac{2 \\cdot 9{,}6\\,J}{30\\,kg}} = 0{,}80\\,\\tfrac{m}{s}$"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Gib an, wo das Kind am schnellsten ist und wo die Energie ganz potentiell ist.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Am schnellsten in der Ruhelage, ganz potentiell in den Umkehrpunkten."
+      ]
+     },
+     "hilfen": [
+      "Wo ist die Elongation null?"
+     ],
+     "loesung": [
+      "Ruhelage: v maximal · Umkehrpunkte: nur potentielle Energie"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S3-Z",
+   "thema": "S3",
+   "stufe": "Z",
+   "titel": "Doppelte Amplitude",
+   "kontext": "Ein Mitschüler behauptet: „Verdoppelt man die Amplitude, verdoppelt sich die Energie der Schwingung und der Körper braucht für eine Schwingung doppelt so lange.“",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Beurteile beide Teile der Aussage.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Energie vervierfacht sich, weil $E \\sim y_{max}^2$.",
+       "Die Periodendauer bleibt gleich, weil T nur von m und D abhängt.",
+       "Der doppelte Weg wird mit doppelter größter Geschwindigkeit zurückgelegt."
+      ]
+     },
+     "hilfen": [
+      "Wie geht $y_{max}$ in E ein?",
+      "Kommt $y_{max}$ in T vor?",
+      "Wie ändert sich $v_{max}$, wenn E vierfach ist?"
+     ],
+     "loesung": [
+      "Energie: falsch, Faktor 4",
+      "Periodendauer: falsch, bleibt gleich",
+      "$v_{max}$ verdoppelt sich"
+     ],
+     "id": "a"
+    }
+   ]
+  },
+  {
+   "id": "S4-G1",
+   "thema": "S4",
+   "stufe": "G",
+   "titel": "Start in der Ruhelage nach oben",
+   "kontext": "Ein Federschwinger startet in der Ruhelage nach oben (oben positiv). Amplitude 4,0 cm, Periodendauer 0,50 s.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Kreisfrequenz.",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 12.6,
+      "einheit": "1/s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$\\omega = \\dfrac{2\\pi}{T}$"
+     ],
+     "loesung": [
+      "$\\omega = \\dfrac{2\\pi}{0{,}50\\,s} \\approx 12{,}6\\,\\tfrac{1}{s}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Welches Weg-Zeit-Gesetz gilt?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$y(t) = 4{,}0\\,cm \\cdot \\sin(12{,}6\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = 4{,}0\\,cm \\cdot \\cos(12{,}6\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = -4{,}0\\,cm \\cdot \\sin(12{,}6\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = 4{,}0\\,cm \\cdot \\sin(0{,}50\\,s \\cdot t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Start in der Ruhelage nach oben: welche Funktion beginnt bei null und steigt?"
+     ],
+     "loesung": [
+      "Start Ruhelage nach oben: Sinus mit positiver Amplitude."
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Berechne die Elongation nach 0,10 s in cm.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 3.8,
+      "einheit": "cm",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Einsetzen, Taschenrechner auf RAD."
+     ],
+     "loesung": [
+      "$y = 4{,}0\\,cm \\cdot \\sin(12{,}57 \\cdot 0{,}10) \\approx 3{,}8\\,cm$"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S4-G2",
+   "thema": "S4",
+   "stufe": "G",
+   "titel": "Startpositionen",
+   "kontext": "Ordne jeder Startposition das passende Weg-Zeit-Gesetz zu (oben positiv).",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Start im oberen Umkehrpunkt",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$y_{max} \\cdot \\cos(\\omega t)$",
+       "$y_{max} \\cdot \\sin(\\omega t)$",
+       "$-y_{max} \\cdot \\cos(\\omega t)$",
+       "$-y_{max} \\cdot \\sin(\\omega t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Welche Funktion hat bei t = 0 ihren größten Wert?"
+     ],
+     "loesung": [
+      "cos(0) = 1: Start oben"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Start im unteren Umkehrpunkt",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$-y_{max} \\cdot \\cos(\\omega t)$",
+       "$y_{max} \\cdot \\cos(\\omega t)$",
+       "$y_{max} \\cdot \\sin(\\omega t)$",
+       "$-y_{max} \\cdot \\sin(\\omega t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Bei t = 0 muss y = −y_max sein."
+     ],
+     "loesung": [
+      "−cos: Start unten"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Start in der Ruhelage nach unten",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$-y_{max} \\cdot \\sin(\\omega t)$",
+       "$y_{max} \\cdot \\sin(\\omega t)$",
+       "$y_{max} \\cdot \\cos(\\omega t)$",
+       "$-y_{max} \\cdot \\cos(\\omega t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Bei t = 0 ist y = 0, danach wird y negativ."
+     ],
+     "loesung": [
+      "−sin: Start in der Ruhelage nach unten"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S4-A",
+   "thema": "S4",
+   "stufe": "A",
+   "titel": "Gesetz aus dem Diagramm",
+   "kontext": "Das Diagramm zeigt die Elongation eines Schwingers.",
+   "abbildung": {
+    "typ": "yt_diagramm",
+    "funktion": "cos",
+    "ymax": 3.0,
+    "T": 0.4,
+    "tmax": 1.0,
+    "einheit_y": "cm",
+    "raster": true
+   },
+   "teile": [
+    {
+     "text": "Welches Weg-Zeit-Gesetz passt?",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$y(t) = 3{,}0\\,cm \\cdot \\cos(15{,}7\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = 3{,}0\\,cm \\cdot \\sin(15{,}7\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = 3{,}0\\,cm \\cdot \\cos(0{,}40\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = -3{,}0\\,cm \\cdot \\cos(15{,}7\\,\\tfrac{1}{s} \\cdot t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Wo startet die Kurve?",
+      "Lies T ab und berechne $\\omega$."
+     ],
+     "loesung": [
+      "Start im oberen Umkehrpunkt: cos",
+      "T = 0,40 s, $\\omega = 15{,}7\\,\\tfrac{1}{s}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die Elongation nach 0,15 s in cm.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": -2.12,
+      "einheit": "cm",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "RAD-Modus, Vorzeichen beachten."
+     ],
+     "loesung": [
+      "$y = 3{,}0\\,cm \\cdot \\cos(15{,}71 \\cdot 0{,}15) \\approx -2{,}1\\,cm$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S4-Z",
+   "thema": "S4",
+   "stufe": "Z",
+   "titel": "Bungeesprung",
+   "kontext": "Ein Bungeespringer schwingt nach dem ersten Fall näherungsweise harmonisch um seine Ruhelage. Er startet im unteren Umkehrpunkt, 12 m unter der Ruhelage, die Periodendauer beträgt 6,0 s.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Welches Gesetz beschreibt die Bewegung (oben positiv)?",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$y(t) = -12\\,m \\cdot \\cos(1{,}05\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = 12\\,m \\cdot \\cos(1{,}05\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = -12\\,m \\cdot \\sin(1{,}05\\,\\tfrac{1}{s} \\cdot t)$",
+       "$y(t) = 12\\,m \\cdot \\sin(6{,}0\\,\\tfrac{1}{s} \\cdot t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Start unten.",
+      "$\\omega = \\dfrac{2\\pi}{6{,}0\\,s}$"
+     ],
+     "loesung": [
+      "Start im unteren Umkehrpunkt: −cos, $\\omega \\approx 1{,}05\\,\\tfrac{1}{s}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Gib an, wann er erstmals durch die Ruhelage geht.",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.5,
+      "einheit": "s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Vom Umkehrpunkt zur Ruhelage ist es eine Viertelperiode."
+     ],
+     "loesung": [
+      "$t = \\dfrac{T}{4} = 1{,}5\\,s$"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Das Seil ist in der Ruhelage um 9 m gedehnt. Beurteile, ob die Bewegung über die ganze Periode harmonisch sein kann.",
+     "be": 3,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Oberhalb der ungedehnten Seillänge ist das Seil schlaff, es gibt keine Federkraft.",
+       "Mit 12 m Amplitude erreicht der Springer 12 m über der Ruhelage, das sind 3 m über der ungedehnten Länge.",
+       "Dort wirkt nur die Gewichtskraft, die Rückstellkraft ist nicht proportional zur Elongation: nicht harmonisch."
+      ]
+     },
+     "hilfen": [
+      "Wann übt ein Seil eine Kraft aus?",
+      "Wie hoch über der Ruhelage kommt der Springer?"
+     ],
+     "loesung": [
+      "Seil schlaff oberhalb der ungedehnten Länge",
+      "12 m > 9 m: Springer kommt in diesen Bereich",
+      "dort kein lineares Kraftgesetz, nicht harmonisch"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S5-G1",
+   "thema": "S5",
+   "stufe": "G",
+   "titel": "Größte Werte",
+   "kontext": "Für einen Schwinger gilt $y(t) = 5{,}0\\,cm \\cdot \\sin(8{,}0\\,\\tfrac{1}{s} \\cdot t)$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Welches v-t-Gesetz gilt?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "$v(t) = 0{,}40\\,\\tfrac{m}{s} \\cdot \\cos(8{,}0\\,\\tfrac{1}{s} \\cdot t)$",
+       "$v(t) = 0{,}40\\,\\tfrac{m}{s} \\cdot \\sin(8{,}0\\,\\tfrac{1}{s} \\cdot t)$",
+       "$v(t) = -0{,}40\\,\\tfrac{m}{s} \\cdot \\cos(8{,}0\\,\\tfrac{1}{s} \\cdot t)$",
+       "$v(t) = 3{,}2\\,\\tfrac{m}{s} \\cdot \\cos(8{,}0\\,\\tfrac{1}{s} \\cdot t)$"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Nach t ableiten, innere Ableitung $\\omega$."
+     ],
+     "loesung": [
+      "$v(t) = y_{max} \\cdot \\omega \\cdot \\cos(\\omega t)$, $0{,}050\\,m \\cdot 8{,}0\\,\\tfrac{1}{s} = 0{,}40\\,\\tfrac{m}{s}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die größte Beschleunigung.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 3.2,
+      "einheit": "m/s²",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$a_{max} = y_{max} \\cdot \\omega^2$"
+     ],
+     "loesung": [
+      "$a_{max} = 0{,}050\\,m \\cdot (8{,}0\\,\\tfrac{1}{s})^2 = 3{,}2\\,\\tfrac{m}{s^2}$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S5-G2",
+   "thema": "S5",
+   "stufe": "G",
+   "titel": "Beschleunigung und Elongation",
+   "kontext": "Derselbe Schwinger ($\\omega = 8{,}0\\,\\tfrac{1}{s}$) ist gerade 2,0 cm über der Ruhelage.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Beschleunigung (oben positiv).",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": -1.28,
+      "einheit": "m/s²",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$a = -\\omega^2 \\cdot y$",
+      "y in Meter, Vorzeichen beachten."
+     ],
+     "loesung": [
+      "$a = -(8{,}0\\,\\tfrac{1}{s})^2 \\cdot 0{,}020\\,m = -1{,}28\\,\\tfrac{m}{s^2}$",
+      "Die Beschleunigung zeigt nach unten, zur Ruhelage."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Wo ist die Beschleunigung null?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "in der Ruhelage",
+       "in den Umkehrpunkten",
+       "nirgends",
+       "auf halbem Weg"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "$a = -\\omega^2 \\cdot y$ bei y = 0?"
+     ],
+     "loesung": [
+      "In der Ruhelage ist y = 0, also a = 0. Dort ist v am größten."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S5-A",
+   "thema": "S5",
+   "stufe": "A",
+   "titel": "Seismometer",
+   "kontext": "Ein Seismometer zeichnet eine harmonische Bodenschwingung mit der Amplitude 1,5 cm und der Periodendauer 0,80 s auf.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die größte Geschwindigkeit des Bodens.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.12,
+      "einheit": "m/s",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Zuerst $\\omega$, dann $v_{max} = y_{max} \\cdot \\omega$."
+     ],
+     "loesung": [
+      "$\\omega = \\dfrac{2\\pi}{0{,}80\\,s} \\approx 7{,}85\\,\\tfrac{1}{s}$",
+      "$v_{max} = 0{,}015\\,m \\cdot 7{,}85\\,\\tfrac{1}{s} \\approx 0{,}12\\,\\tfrac{m}{s}$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die größte Beschleunigung.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 0.93,
+      "einheit": "m/s²",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$a_{max} = y_{max} \\cdot \\omega^2$"
+     ],
+     "loesung": [
+      "$a_{max} = 0{,}015\\,m \\cdot (7{,}85\\,\\tfrac{1}{s})^2 \\approx 0{,}93\\,\\tfrac{m}{s^2}$"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S5-Z",
+   "thema": "S5",
+   "stufe": "Z",
+   "titel": "Seismometer mit Induktion",
+   "kontext": "Im Seismometer schwingt ein Magnet in einer Spule. Die induzierte Spannung wird aufgezeichnet.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Ein Schüler sagt: „Die Spannung ist am größten, wenn der Magnet am weitesten ausgelenkt ist.“ Beurteile die Aussage.",
+     "be": 4,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Spannung hängt von der Änderungsrate des Flusses ab.",
+       "Die Flussänderung ist umso schneller, je größer die Geschwindigkeit des Magneten ist: U folgt v(t).",
+       "Im Umkehrpunkt ist v = 0, die Spannung ist dort null.",
+       "Am größten ist sie beim Durchgang durch die Ruhelage. Die Aussage ist falsch."
+      ]
+     },
+     "hilfen": [
+      "Wovon hängt die induzierte Spannung ab?",
+      "Wann ändert sich der Fluss am schnellsten?",
+      "Wo ist der Magnet am schnellsten?"
+     ],
+     "loesung": [
+      "$U \\sim \\Phi'$",
+      "Φ ändert sich am schnellsten bei größtem v",
+      "Umkehrpunkt: v = 0, U = 0",
+      "Ruhelage: U maximal, Aussage falsch"
+     ],
+     "id": "a"
+    }
+   ]
+  },
+  {
+   "id": "S6-G1",
+   "thema": "S6",
+   "stufe": "G",
+   "titel": "Gedämpfte Schwingung erkennen",
+   "kontext": "Das Diagramm zeigt eine gedämpfte Schwingung.",
+   "abbildung": {
+    "typ": "gedaempft",
+    "bremskraft": "v",
+    "ymax": 2.0,
+    "T": 1.0,
+    "tmax": 8.0,
+    "einhuellende": false
+   },
+   "teile": [
+    {
+     "text": "Welche Aussage ist richtig?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Die Amplitude nimmt ab, die Periodendauer bleibt gleich.",
+       "Die Periodendauer nimmt ab, die Amplitude bleibt gleich.",
+       "Beide nehmen ab.",
+       "Beide bleiben gleich."
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Vergleiche die Abstände der Nulldurchgänge."
+     ],
+     "loesung": [
+      "Die Ausschläge werden kleiner, die Nulldurchgänge haben gleichen Abstand. $T = 2\\pi\\sqrt{\\tfrac{m}{D}}$ hängt nicht von der Amplitude ab."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Die Amplitude halbiert sich. Wie viel Prozent der Energie sind noch vorhanden?",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 25.0,
+      "einheit": "%",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$E \\sim y_{max}^2$"
+     ],
+     "loesung": [
+      "$(\\tfrac{1}{2})^2 = \\tfrac{1}{4}$: 25 % der Energie",
+      "75 % wurden in thermische Energie umgewandelt."
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S6-G2",
+   "thema": "S6",
+   "stufe": "G",
+   "titel": "Einhüllende deuten",
+   "kontext": "Ordne der Form der Einhüllenden die Art der Bremskraft zu.",
+   "abbildung": {
+    "typ": "einhuellende_drei",
+    "reihenfolge": [
+     "konst",
+     "v",
+     "v2"
+    ]
+   },
+   "teile": [
+    {
+     "text": "Einhüllende ist eine Gerade",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Bremskraft konstant",
+       "Bremskraft ~ v",
+       "Bremskraft ~ v²"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Nimmt die Amplitude je Periode um den gleichen Betrag ab?"
+     ],
+     "loesung": [
+      "Gerade: konstante Bremskraft (Gleitreibung)"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Einhüllende wird immer flacher, gleicher Bruchteil je Periode",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Bremskraft ~ v",
+       "Bremskraft konstant",
+       "Bremskraft ~ v²"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Große Amplitude, große Geschwindigkeit, starke Bremsung."
+     ],
+     "loesung": [
+      "Bremskraft ~ v (Öldämpfer, Wirbelstrom)"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Bei großer Amplitude nimmt sie je Periode um einen großen Bruchteil ab, bei kleiner Amplitude nur noch um einen sehr kleinen Bruchteil",
+     "be": 1,
+     "afb": "II",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "Bremskraft ~ v²",
+       "Bremskraft ~ v",
+       "Bremskraft konstant"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Bei kleinem v bremst diese Kraft kaum noch."
+     ],
+     "loesung": [
+      "Bremskraft ~ v² (Luftwiderstand)"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S6-A",
+   "thema": "S6",
+   "stufe": "A",
+   "titel": "Stoßdämpfer",
+   "kontext": "Ein Auto fährt über eine Bodenwelle.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Welcher Dämpfungsfall ist für den Stoßdämpfer erwünscht?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "aperiodischer Grenzfall",
+       "Schwingfall",
+       "Kriechfall",
+       "ungedämpfte Schwingung"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Das Auto soll schnell und ohne Nachschaukeln ruhig liegen."
+     ],
+     "loesung": [
+      "Aperiodischer Grenzfall: schnellste Rückkehr ohne Überschwingen."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Beschreibe, woran man bei einem verschlissenen und bei einem zu harten Dämpfer erkennt, dass er nicht passt.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "verschlissen (zu schwach): Schwingfall, die Karosserie schwingt über die Ruhelage hinaus",
+       "zu hart: Kriechfall, die Karosserie kehrt nur langsam in die Ruhelage zurück"
+      ]
+     },
+     "hilfen": [
+      "Welche zwei Merkmale unterscheiden die Dämpfungsfälle?"
+     ],
+     "loesung": [
+      "verschlissen: Überschwingen (Schwingfall)",
+      "zu hart: langsame Rückkehr ohne Überschwingen (Kriechfall)"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S6-Z",
+   "thema": "S6",
+   "stufe": "Z",
+   "titel": "Ausschwingende Schaukel",
+   "kontext": "Eine Schaukel schwingt mit 12 cm Amplitude aus. Nach 8,0 s beträgt die Amplitude noch 6,0 cm.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Die Bremskraft ist ~ v. Gib an, nach welcher Zeit die Amplitude 3,0 cm beträgt.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 16.0,
+      "einheit": "s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Bei Bremskraft ~ v nimmt die Amplitude in gleichen Zeiten um den gleichen Bruchteil ab."
+     ],
+     "loesung": [
+      "In 8,0 s halbiert sich die Amplitude: 12 cm → 6,0 cm → 3,0 cm nach 16 s"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Die Bremskraft ist konstant (gleiche Abnahme je Zeit). Gib an, nach welcher Zeit die Amplitude 3,0 cm beträgt.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 12.0,
+      "einheit": "s",
+      "toleranz_rel": 0.02,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Bei konstanter Bremskraft nimmt die Amplitude in gleichen Zeiten um den gleichen Betrag ab."
+     ],
+     "loesung": [
+      "6,0 cm in 8,0 s, also 0,75 cm je Sekunde",
+      "9,0 cm Abnahme brauchen 12 s"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S7-G1",
+   "thema": "S7",
+   "stufe": "G",
+   "titel": "Begriffe",
+   "kontext": "Ein Federschwinger wird am oberen Federende periodisch von einer Hand bewegt.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Mit welcher Frequenz schwingt der Körper nach dem Einschwingen?",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "mit der Erregerfrequenz",
+       "mit seiner Eigenfrequenz",
+       "mit der Summe beider",
+       "gar nicht"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Wer gibt bei der erzwungenen Schwingung die Frequenz vor?"
+     ],
+     "loesung": [
+      "Erzwungene Schwingung: Der Schwinger schwingt mit der Erregerfrequenz."
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Die Erregerfrequenz ist deutlich größer als $f_0$. Der Körper schwingt …",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "gegenphasig mit sehr kleiner Amplitude",
+       "gleichphasig mit etwa der Amplitude der Hand",
+       "mit wachsender Amplitude",
+       "mit seiner Eigenfrequenz"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Kann der träge Körper einer schnellen Anregung folgen?"
+     ],
+     "loesung": [
+      "Erregerfrequenz > f₀: gegenphasig, sehr kleine Amplitude"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Die Erregerfrequenz ist deutlich kleiner als $f_0$. Der Körper schwingt …",
+     "be": 1,
+     "afb": "I",
+     "pruefung": {
+      "typ": "auswahl",
+      "optionen": [
+       "gleichphasig mit etwa der Amplitude der Hand",
+       "gegenphasig mit sehr kleiner Amplitude",
+       "mit wachsender Amplitude",
+       "gar nicht"
+      ],
+      "richtig": [
+       0
+      ],
+      "mehrfach": false
+     },
+     "hilfen": [
+      "Bei langsamer Anregung bewegt sich der Körper mit der Hand mit."
+     ],
+     "loesung": [
+      "Erregerfrequenz < f₀: gleichphasig, etwa Erregeramplitude"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S7-G2",
+   "thema": "S7",
+   "stufe": "G",
+   "titel": "Eigenfrequenz",
+   "kontext": "Ein Körper der Masse 400 g hängt an einer Feder mit $D = 16\\,\\tfrac{N}{m}$.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Berechne die Eigenfrequenz.",
+     "be": 2,
+     "afb": "I",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 1.0,
+      "einheit": "Hz",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "$f_0 = \\dfrac{1}{T} = \\dfrac{1}{2\\pi} \\cdot \\sqrt{\\dfrac{D}{m}}$"
+     ],
+     "loesung": [
+      "$f_0 = \\dfrac{1}{2\\pi} \\cdot \\sqrt{\\dfrac{16\\,\\tfrac{N}{m}}{0{,}40\\,kg}} \\approx 1{,}0\\,Hz$"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Begründe, warum die Amplitude bei Anregung mit 1,0 Hz wächst.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Erregerfrequenz gleich Eigenfrequenz: Resonanz.",
+       "Die Kraft der Hand zeigt in jeder Periode in Bewegungsrichtung, es wird in jeder Periode Energie zugeführt."
+      ]
+     },
+     "hilfen": [
+      "Welche Bedingung liegt bei 1,0 Hz vor?",
+      "Was bedeutet das für die Energie?"
+     ],
+     "loesung": [
+      "Resonanz",
+      "Energiezufuhr in jeder Periode, $E \\sim y_{max}^2$ wächst"
+     ],
+     "id": "b"
+    }
+   ]
+  },
+  {
+   "id": "S7-A",
+   "thema": "S7",
+   "stufe": "A",
+   "titel": "Waschmaschine",
+   "kontext": "In einer Waschmaschine ist die Trommeleinheit (30 kg) federnd aufgehängt, die Federhärte beträgt insgesamt $3{,}0 \\cdot 10^4\\,\\tfrac{N}{m}$. Beim Hochfahren des Schleudergangs rüttelt die Maschine bei einer bestimmten Drehzahl heftig, danach läuft sie wieder ruhig.",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Erkläre das Rütteln.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Die Unwucht der Wäsche regt die Trommeleinheit mit der Drehfrequenz an.",
+       "Beim Hochfahren erreicht die Drehfrequenz einmal die Eigenfrequenz: Resonanz, große Amplitude. Danach ist die Erregerfrequenz größer als f₀."
+      ]
+     },
+     "hilfen": [
+      "Was ist hier der Erreger, was der Schwinger?",
+      "Welche Frequenzen durchläuft die Trommel beim Hochfahren?"
+     ],
+     "loesung": [
+      "Unwucht als Erreger mit der Drehfrequenz",
+      "Drehfrequenz = Eigenfrequenz: Resonanz"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Berechne die Drehzahl (Umdrehungen je Minute), bei der die Maschine am stärksten rüttelt.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "zahl",
+      "wert": 300.0,
+      "einheit": "1/min",
+      "toleranz_rel": 0.03,
+      "vorzeichen": "streng"
+     },
+     "hilfen": [
+      "Zuerst die Eigenfrequenz in Hz.",
+      "Hz bedeutet je Sekunde. Mit 60 multiplizieren."
+     ],
+     "loesung": [
+      "$f_0 = \\dfrac{1}{2\\pi}\\sqrt{\\dfrac{3{,}0 \\cdot 10^4\\,\\tfrac{N}{m}}{30\\,kg}} \\approx 5{,}0\\,Hz$",
+      "$5{,}0\\,Hz \\cdot 60 \\approx 300$ Umdrehungen je Minute"
+     ],
+     "id": "b"
+    },
+    {
+     "text": "Jemand schlägt vor, die Trommeleinheit schwerer zu bauen. Beurteile den Vorschlag.",
+     "be": 2,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Mehr Masse senkt die Eigenfrequenz, beim Hochfahren wird die Resonanz trotzdem durchfahren.",
+       "Bei gleicher Unwucht wird die Amplitude etwas kleiner. Verhindert wird das Rütteln aber nur durch stärkere Dämpfung, die mehr Energie in thermische Energie umwandelt."
+      ]
+     },
+     "hilfen": [
+      "Wie hängt f₀ von m ab?",
+      "Wird die neue Eigenfrequenz beim Hochfahren auch erreicht?"
+     ],
+     "loesung": [
+      "f₀ sinkt, Resonanz wird verschoben, nicht vermieden",
+      "größere Masse: etwas kleinere Amplitude, Dämpfer begrenzen sie wirksam"
+     ],
+     "id": "c"
+    }
+   ]
+  },
+  {
+   "id": "S7-Z",
+   "thema": "S7",
+   "stufe": "Z",
+   "titel": "Tacoma-Narrows-Brücke",
+   "kontext": "Über den Einsturz der Tacoma-Narrows-Brücke 1940 liest man oft: „Der Wind hat genau die Eigenfrequenz der Brücke getroffen.“",
+   "abbildung": null,
+   "teile": [
+    {
+     "text": "Beurteile diese Erklärung und erkläre den Einsturz mit einer Energiebilanz.",
+     "be": 4,
+     "afb": "III",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Ein gleichmäßiger Wind hat keine Frequenz, die eine Eigenfrequenz treffen könnte. Die Erklärung ist so nicht haltbar.",
+       "Die Fahrbahn verdrehte sich mit ihrer Eigenfrequenz, die Drehung änderte die Luftkräfte mit derselben Frequenz: Die Brücke regte sich selbst an.",
+       "In jeder Periode wurde mehr Energie zugeführt, als die Dämpfung in thermische Energie umwandeln konnte.",
+       "Die Amplitude wuchs bis zum Bruch: Resonanzkatastrophe."
+      ]
+     },
+     "hilfen": [
+      "Hat ein gleichmäßiger Wind eine Frequenz?",
+      "Woher kam die periodische Anregung?",
+      "Vergleiche Energiezufuhr und Umwandlung je Periode."
+     ],
+     "loesung": [
+      "gleichmäßiger Wind: keine Erregerfrequenz",
+      "Selbstanregung mit der Eigenfrequenz",
+      "Zufuhr je Periode größer als Umwandlung",
+      "Amplitude wächst bis zum Bruch"
+     ],
+     "id": "a"
+    },
+    {
+     "text": "Nenne zwei Schutzmaßnahmen für eine neue Brücke und begründe, an welcher Stelle der Energiebilanz sie ansetzen.",
+     "be": 2,
+     "afb": "II",
+     "pruefung": {
+      "typ": "selbst",
+      "kriterien": [
+       "Dämpfer einbauen: mehr Umwandlung in thermische Energie.",
+       "Steifer oder mit offener Fahrbahn bauen: Eigenfrequenz verschieben bzw. Anregung durch die Luft verringern."
+      ]
+     },
+     "hilfen": [
+      "Welche Größen bestimmen, ob die Amplitude wächst?"
+     ],
+     "loesung": [
+      "Dämpfung erhöhen",
+      "Eigenfrequenz verschieben oder Anregung vermeiden"
+     ],
+     "id": "b"
+    }
+   ]
+  }
+ ],
+ "diagnose": [
+  {
+   "thema": "I1",
+   "frage": "Ein Stab bewegt sich doppelt so schnell durch dasselbe Feld. Die Spannung …",
+   "optionen": [
+    "verdoppelt sich",
+    "bleibt gleich",
+    "halbiert sich",
+    "vervierfacht sich"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I1",
+   "frage": "Welche Kraft trennt im bewegten Stab die Ladungen?",
+   "optionen": [
+    "Lorentzkraft",
+    "Gewichtskraft",
+    "Reibungskraft",
+    "Federkraft"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I2",
+   "frage": "Die Flussdichte in einer Spule ist groß, aber konstant. Die induzierte Spannung ist …",
+   "optionen": [
+    "null",
+    "groß",
+    "negativ",
+    "gleich der Flussdichte"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I2",
+   "frage": "Welche Einheit hat der magnetische Fluss?",
+   "optionen": [
+    "Vs",
+    "T",
+    "V/s",
+    "Wb/m²"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I3",
+   "frage": "Nach der Lenz’schen Regel wirkt der Induktionsstrom …",
+   "optionen": [
+    "seiner Ursache entgegen",
+    "seiner Ursache gleichgerichtet",
+    "immer senkrecht zum Magnetfeld",
+    "nur bei Wechselstrom"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I3",
+   "frage": "Beim Einschalten einer Spule steigt die Stromstärke …",
+   "optionen": [
+    "verzögert an",
+    "sprunghaft an",
+    "gar nicht an",
+    "über den Endwert hinaus an"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I4",
+   "frage": "Die Windungszahl einer Spule wird verdoppelt (gleiche Länge). L …",
+   "optionen": [
+    "vervierfacht sich",
+    "verdoppelt sich",
+    "bleibt gleich",
+    "halbiert sich"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I4",
+   "frage": "Welche Einheit hat die Induktivität?",
+   "optionen": [
+    "H",
+    "F",
+    "T",
+    "Vs"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I5",
+   "frage": "Warum überträgt man Energie mit Hochspannung?",
+   "optionen": [
+    "kleinere Stromstärke, kleinere Verluste",
+    "Hochspannung ist ungefährlicher",
+    "die Leistung wird größer",
+    "der Widerstand der Leitung sinkt"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I5",
+   "frage": "Ein idealer Transformator erhöht die Spannung. Die Leistung …",
+   "optionen": [
+    "bleibt gleich",
+    "steigt",
+    "sinkt auf null",
+    "verdoppelt sich immer"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I6",
+   "frage": "Die Kapazität eines Schwingkreises wird vervierfacht. Die Periodendauer …",
+   "optionen": [
+    "verdoppelt sich",
+    "vervierfacht sich",
+    "halbiert sich",
+    "bleibt gleich"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "I6",
+   "frage": "Warum klingt die Schwingung in einem realen Schwingkreis ab?",
+   "optionen": [
+    "Der Widerstand wandelt Energie in thermische Energie um",
+    "Die Energie wird vernichtet",
+    "Der Kondensator verliert seine Kapazität",
+    "Die Spule wird zum Dauermagneten"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S1",
+   "frage": "Die Amplitude ist …",
+   "optionen": [
+    "die größte Elongation",
+    "der Abstand zwischen Berg und Tal",
+    "die Zeit für eine Schwingung",
+    "die Elongation bei t = 0"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S1",
+   "frage": "T = 0,25 s. Die Frequenz ist …",
+   "optionen": [
+    "4,0 Hz",
+    "0,25 Hz",
+    "2,5 Hz",
+    "25 Hz"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S2",
+   "frage": "Die Masse am Federschwinger wird vervierfacht. T …",
+   "optionen": [
+    "verdoppelt sich",
+    "vervierfacht sich",
+    "bleibt gleich",
+    "halbiert sich"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S2",
+   "frage": "Derselbe Federschwinger auf dem Mond hat …",
+   "optionen": [
+    "dieselbe Periodendauer",
+    "eine größere Periodendauer",
+    "eine kleinere Periodendauer",
+    "keine Schwingung"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S3",
+   "frage": "Wo ist die Geschwindigkeit eines Federschwingers am größten?",
+   "optionen": [
+    "in der Ruhelage",
+    "in den Umkehrpunkten",
+    "auf halbem Weg",
+    "überall gleich"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S3",
+   "frage": "Die Amplitude wird verdoppelt. Die Energie …",
+   "optionen": [
+    "vervierfacht sich",
+    "verdoppelt sich",
+    "bleibt gleich",
+    "halbiert sich"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S4",
+   "frage": "Ein Schwinger startet im oberen Umkehrpunkt. Das Gesetz enthält …",
+   "optionen": [
+    "cos",
+    "sin",
+    "−sin",
+    "−cos"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S4",
+   "frage": "T = 2,0 s. Die Kreisfrequenz ist …",
+   "optionen": [
+    "3,14 1/s",
+    "6,28 1/s",
+    "0,50 1/s",
+    "12,6 1/s"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S5",
+   "frage": "Wo ist die Geschwindigkeit null?",
+   "optionen": [
+    "in den Umkehrpunkten",
+    "in der Ruhelage",
+    "nirgends",
+    "überall"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S5",
+   "frage": "$a_{max}$ eines harmonischen Schwingers ist …",
+   "optionen": [
+    "$y_{max} \\cdot \\omega^2$",
+    "$y_{max} \\cdot \\omega$",
+    "$\\omega^2$",
+    "$y_{max} / \\omega$"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S6",
+   "frage": "Bei einer schwach gedämpften Schwingung bleibt gleich:",
+   "optionen": [
+    "die Periodendauer",
+    "die Amplitude",
+    "die Energie",
+    "die größte Geschwindigkeit"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S6",
+   "frage": "Welcher Fall erreicht die Ruhelage am schnellsten ohne Überschwingen?",
+   "optionen": [
+    "aperiodischer Grenzfall",
+    "Kriechfall",
+    "Schwingfall",
+    "ungedämpfte Schwingung"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S7",
+   "frage": "Resonanz liegt vor, wenn …",
+   "optionen": [
+    "die Erregerfrequenz gleich der Eigenfrequenz ist",
+    "die Erregerfrequenz sehr klein ist",
+    "der Schwinger nicht angetrieben wird",
+    "die Dämpfung sehr groß ist"
+   ],
+   "richtig": 0
+  },
+  {
+   "thema": "S7",
+   "frage": "Was begrenzt die Amplitude in der Resonanz?",
+   "optionen": [
+    "die Dämpfung",
+    "die Masse allein",
+    "die Erregerfrequenz",
+    "nichts"
+   ],
+   "richtig": 0
+  }
+ ]
+}

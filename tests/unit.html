@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unit-Tests</title>
+  <style>body { font-family: ui-monospace, Menlo, monospace; margin: 16px; background: #fff; color: #111; }</style>
+</head>
+<body>
+  <h1>Unit-Tests</h1>
+  <pre id="ausgabe"></pre>
+  <script>
+    const ausgabe = document.getElementById('ausgabe');
+    const log = console.log;
+    console.log = (...x) => { ausgabe.textContent += x.join(' ') + '\n'; log(...x); };
+    window.addEventListener('error', (e) => { ausgabe.textContent += 'FEHLER: ' + e.message + '\n'; });
+    window.addEventListener('unhandledrejection', (e) => { ausgabe.textContent += 'FEHLER: ' + e.reason + '\nUnit-Tests: abgebrochen\n'; });
+  </script>
+  <script type="module" src="unit.mjs"></script>
+</body>
+</html>
