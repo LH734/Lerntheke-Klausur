@@ -62,6 +62,17 @@ def merke_text(seite, name):
         return k.innerText + ' ' + document.querySelector('header').innerText;
     }""")
     gesehene_texte[name] = text
+    verirrt = seite.evaluate("""() => {
+        const w = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT);
+        const treffer = [];
+        while (w.nextNode()) {
+            const n = w.currentNode;
+            if (['null', 'undefined', 'NaN', '[object Object]'].includes(n.nodeValue.trim())
+                && !n.parentElement.closest('.option-text, .katex, textarea')) treffer.push(n.parentElement.className || n.parentElement.tagName);
+        }
+        return treffer;
+    }""")
+    pruefe(f"keine verirrten Platzhalter: {name}", not verirrt, str(verirrt))
 
 
 def keine_katex_fehler(seite, name):
@@ -177,14 +188,17 @@ def test_rueckmeldung(kontext, basis):
     seite = kontext.new_page()
     seite.goto(basis + "#/aufgabe/I1-G1")
     karte = lambda: seite.locator('section.teil[data-teil="I1-G1/a"]')
-    pruefe("Lösung zeigen anfangs gesperrt", karte().locator('[data-aktion="loesung"]').is_disabled())
+    pruefe("Lösung vergleichen anfangs gesperrt", karte().locator('[data-aktion="loesung"]').is_disabled())
+    pruefe("Hinweis vor dem ersten Fehlversuch", "nach einem falschen Ergebnis" in karte().locator(".loesung-hinweis").inner_text())
     karte().locator("input.zahlfeld").fill("3,0")
     karte().locator('[data-aktion="pruefen"]').click()
     text = karte().locator(".rueckmeldung").inner_text()
     pruefe("erster Fehlversuch: Noch nicht richtig", "Noch nicht richtig" in text, text)
     pruefe("Hinweis Einheitenumrechnung", "Einheitenumrechnung" in text, text)
     pruefe("erster Fehlversuch zeigt keine Hilfe automatisch", karte().locator(".hilfe").count() == 0)
-    pruefe("Lösung zeigen nach Prüfversuch aktiv", karte().locator('[data-aktion="loesung"]').is_enabled())
+    pruefe("Lösung vergleichen nach Fehlversuch noch gesperrt (Wartezeit)", karte().locator('[data-aktion="loesung"]').is_disabled())
+    hinweis = karte().locator(".loesung-hinweis").inner_text()
+    pruefe("Hinweis zeigt Restzeit", re.search(r"in \d+:\d\d min möglich", hinweis) is not None, hinweis)
     karte().locator("input.zahlfeld").fill("0,5")
     karte().locator('[data-aktion="pruefen"]').click()
     pruefe("zweiter Fehlversuch zeigt Hilfe 1", karte().locator(".hilfe").count() == 1)
@@ -202,12 +216,20 @@ def test_rueckmeldung(kontext, basis):
     k().locator('[data-aktion="pruefen"]').click()
     text = k().locator(".rueckmeldung").inner_text()
     pruefe("betrag_ok zählt und erklärt", "Richtig" in text and "Minuszeichen" in text, text)
-    # Lösung zeigen gibt 0 BE
+    # Lösung vergleichen: erst nach Wartezeit und falschem Ergebnis, gibt 0 BE
     seite.goto(basis + "#/aufgabe/S5-G2")
     k = lambda: seite.locator('section.teil[data-teil="S5-G2/a"]')
+    alt = "z => { const s = JSON.parse(localStorage.getItem('lerntheke-gk12')); s.teile[z].s = Date.now() - 30 * 60000; localStorage.setItem('lerntheke-gk12', JSON.stringify(s)); }"
+    seite.evaluate(alt, "S5-G2/a")
+    seite.reload()
+    k().wait_for()
+    pruefe("nach Wartezeit ohne Fehlversuch gesperrt", k().locator('[data-aktion="loesung"]').is_disabled())
     k().locator("input.zahlfeld").fill("1,28")
     k().locator('[data-aktion="pruefen"]').click()
     pruefe("streng: Vorzeichen falsch", "Prüfe das Vorzeichen" in k().locator(".rueckmeldung").inner_text())
+    seite.wait_for_timeout(1200)
+    pruefe("nach Wartezeit und Fehlversuch frei", k().locator('[data-aktion="loesung"]').is_enabled())
+    pruefe("Hinweis verschwindet, wenn frei", k().locator(".loesung-hinweis").inner_text().strip() == "")
     k().locator('[data-aktion="loesung"]').click()
     st = zustand(seite)["teile"]["S5-G2/a"]
     pruefe("Lösung angesehen: 0 BE", st["r"] == 0 and st["l"] and st["d"], str(st))
@@ -255,7 +277,9 @@ def test_diagnose(kontext, basis, bilder=False):
         # abwechselnd erste und letzte angezeigte Option wählen
         optionen = seite.locator('.diagnose input[type="radio"]')
         (optionen.first if i % 2 == 0 else optionen.last).check()
+        merke_text(seite, f"Diagnose Frage {i + 1}")
         seite.locator('[data-aktion="abgeben"]').click()
+        merke_text(seite, f"Diagnose Antwort {i + 1}")
         if i == 0:
             merke_text(seite, "Diagnose")
         themen_frage.append(seite.locator(".rueckmeldung").inner_text())
