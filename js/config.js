@@ -10,6 +10,14 @@ export const KONFIG = {
   // false: richtig vor dem Anzeigen der Lösung gibt die BE, wie bei Zahlenaufgaben.
   auswahlNurErsterVersuch: true,
 
+  // „Lösung vergleichen“ wird erst frei, wenn ein falsches Ergebnis eingegeben wurde und seit
+  // Beginn der Teilaufgabe genug Zeit vergangen ist: der größere Wert aus mindestMinuten und
+  // minutenJeBE mal BE der Teilaufgabe.
+  loesungVergleichen: {
+    mindestMinuten: 2,
+    minutenJeBE: 1,
+  },
+
   // Probeklausur
   klausur: {
     beMin: 38,
