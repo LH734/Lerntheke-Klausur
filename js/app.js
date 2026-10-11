@@ -49,6 +49,19 @@ function h(tag, attrs, ...kinder) {
   return e;
 }
 
+/** Hängt Kinder an und überspringt leere Werte (null, undefined, false). */
+function knoten(kinder) {
+  return kinder.flat(3).filter((k) => k !== null && k !== undefined && k !== false);
+}
+
+function anfuegen(el, ...kinder) {
+  el.append(...knoten(kinder));
+}
+
+function ersetzen(el, ...kinder) {
+  el.replaceChildren(...knoten(kinder));
+}
+
 /** Text mit LaTeX in $…$ als Element. Gerendert wird mit mathe(). */
 function tx(text, tag = 'span', klasse) {
   return h(tag, { class: klasse }, text);
@@ -118,7 +131,7 @@ function stufeChip(stufe) {
 /** Bestätigung direkt im Text, ohne Dialogfenster. */
 function bestaetigung(frage, jaText, ja, neinText = 'Abbrechen') {
   const box = h('div', { class: 'bestaetigung', role: 'alertdialog' });
-  box.append(
+  anfuegen(box, 
     h('p', {}, frage),
     h('div', { class: 'knopfreihe' },
       knopf(jaText, ja, 'knopf warnung', { 'data-aktion': 'ja' }),
@@ -152,7 +165,7 @@ function aufgabeStand(a) {
   for (const t of a.teile) {
     const st = stand(a, t);
     if (!st) continue;
-    beruehrt = true;
+    if (st.d || st.h || st.v) beruehrt = true;
     if (st.d) erledigt++;
     be += st.r || 0;
     hilfen += st.h || 0;
@@ -210,7 +223,7 @@ const SEITEN = [
 
 function zeichneNavigation(route) {
   const eintraege = LEHRER ? [...SEITEN, ['#/lehrer', 'Lehrkraft']] : SEITEN;
-  nav.replaceChildren(...eintraege.map(([ziel, name]) => {
+  ersetzen(nav, ...eintraege.map(([ziel, name]) => {
     const aktiv = route === ziel.slice(1) || (ziel !== '#/' && route.startsWith(ziel.slice(1)))
       || (ziel === '#/themen' && /^\/(thema|aufgabe)\//.test(route));
     return h('a', { href: ziel, class: aktiv ? 'aktiv' : null, 'aria-current': aktiv ? 'page' : null }, name);
@@ -230,7 +243,7 @@ function zeichne() {
   zeichneNavigation(r.pfad);
   const teile = r.pfad.split('/').filter(Boolean);
   let titel = 'Lerntheke Klausur';
-  main.replaceChildren();
+  ersetzen(main);
   if (!teile.length) seiteStart();
   else if (teile[0] === 'themen') { seiteThemen(); titel = 'Themen'; }
   else if (teile[0] === 'thema') seiteThema(decodeURIComponent(teile[1] || ''));
@@ -248,7 +261,7 @@ function zeichne() {
 }
 
 function seiteNichtGefunden() {
-  main.append(h('section', { class: 'karte' },
+  anfuegen(main, h('section', { class: 'karte' },
     h('h1', {}, 'Seite nicht gefunden'),
     h('p', {}, 'Diese Seite gibt es in der Lerntheke nicht.'),
     link('Zur Startseite', '#/')));
@@ -258,7 +271,7 @@ function seiteNichtGefunden() {
 
 function seiteStart() {
   const hatStand = Object.keys(zustand.teile).length > 0 || zustand.diagnose;
-  main.append(
+  anfuegen(main, 
     h('section', { class: 'kopfbereich' },
       h('h1', {}, daten.meta.titel),
       h('p', { class: 'untertitel' }, `${daten.meta.kurs}: Elektromagnetische Induktion und mechanische Schwingungen`)),
@@ -306,14 +319,14 @@ function balken(stufe, s, gesperrt) {
 
 function seiteThemen() {
   const empfohlen = diagnoseFehlerThemen();
-  main.append(h('section', { class: 'kopfbereich' },
+  anfuegen(main, h('section', { class: 'kopfbereich' },
     h('h1', {}, 'Themenübersicht'),
     h('p', { class: 'untertitel' }, empfohlen.size
       ? 'Markierte Themen empfiehlt dir die Diagnose zuerst. Die Balken zeigen, wie viele Teilaufgaben je Stufe bearbeitet sind.'
       : 'Die Balken zeigen, wie viele Teilaufgaben je Stufe bearbeitet sind.')));
   for (const b of daten.bereiche) {
-    main.append(h('h2', { class: 'bereich' }, b.name));
-    main.append(h('div', { class: 'kacheln' }, b.themen.map((t) => {
+    anfuegen(main, h('h2', { class: 'bereich' }, b.name));
+    anfuegen(main, h('div', { class: 'kacheln' }, b.themen.map((t) => {
       const zoffen = zOffen(t.id);
       return h('a', { href: `#/thema/${t.id}`, class: `kachel${empfohlen.has(t.id) ? ' empfohlen' : ''}`, 'data-thema': t.id },
         h('span', { class: 'kachel-kopf' },
@@ -332,7 +345,7 @@ function seiteThema(id) {
   if (!t) { seiteNichtGefunden(); return; }
   const zoffen = zOffen(id);
   const diag = diagnoseThema(id);
-  main.append(
+  anfuegen(main, 
     h('p', { class: 'zurueck' }, h('a', { href: '#/themen' }, 'Zur Themenübersicht')),
     h('section', { class: 'kopfbereich' },
       h('p', { class: 'ueberzeile' }, `${t.id} · ${daten.bereiche.find((b) => b.id === t.bereich).name}`),
@@ -348,7 +361,7 @@ function seiteThema(id) {
     const liste = aufgaben.filter((a) => a.stufe === stufe);
     if (!liste.length) continue;
     const gesperrt = stufe === 'Z' && !zoffen;
-    main.append(h('section', { class: `stufenblock stufe-${stufe}` },
+    anfuegen(main, h('section', { class: `stufenblock stufe-${stufe}` },
       h('h2', {}, h('span', { class: `chip stufe-${stufe}` }, stufe), ` ${STUFE_PLURAL[stufe]}`),
       gesperrt ? h('p', { class: 'sperrhinweis' }, 'Die Zusatzaufgaben werden frei, wenn alle Teilaufgaben der G- und A-Aufgaben dieses Themas bearbeitet sind.') : null,
       h('ul', { class: 'aufgabenliste' }, liste.map((a) => {
@@ -382,9 +395,9 @@ function aufgabenKopf(a, mitThema = true) {
 function seiteAufgabe(id) {
   const a = daten.aufgabeNach.get(id);
   if (!a) { seiteNichtGefunden(); return; }
-  main.append(h('p', { class: 'zurueck' }, h('a', { href: `#/thema/${a.thema}` }, 'Zurück zum Thema')));
+  anfuegen(main, h('p', { class: 'zurueck' }, h('a', { href: `#/thema/${a.thema}` }, 'Zurück zum Thema')));
   if (a.stufe === 'Z' && !zOffen(a.thema)) {
-    main.append(h('section', { class: 'karte' },
+    anfuegen(main, h('section', { class: 'karte' },
       aufgabenKopf(a),
       h('p', { class: 'sperrhinweis' }, 'Diese Zusatzaufgabe wird frei, wenn alle Teilaufgaben der G- und A-Aufgaben dieses Themas bearbeitet sind.'),
       link('Zum Thema', `#/thema/${a.thema}`)));
@@ -392,7 +405,7 @@ function seiteAufgabe(id) {
   }
   const fig = abbildung(a);
   const teileBox = h('div', { class: 'teile' });
-  main.append(h('article', { class: 'aufgabe', 'data-aufgabe': a.id },
+  anfuegen(main, h('article', { class: 'aufgabe', 'data-aufgabe': a.id },
     h('div', { class: 'aufgabe-links' },
       aufgabenKopf(a),
       tx(a.kontext, 'p', 'kontext'),
@@ -434,44 +447,49 @@ function erneuereTeil(a, t, box, alt) {
 
 function teilKarte(a, t, box) {
   const k = teilSchluessel(a, t);
-  const st = stand(a, t) || { r: 0, h: 0, v: 0, l: false, d: false, ok: false };
   const p = t.pruefung;
+  if (!stand(a, t)?.d && !stand(a, t)?.s) {
+    // Beginn der Teilaufgabe merken, davon hängt „Lösung vergleichen“ ab
+    standSchreiben(a, t).s = Date.now();
+    speichere();
+  }
+  const st = stand(a, t);
   const karte = h('section', { class: `teil${st.d ? ' erledigt' : ''}`, 'data-teil': k, 'data-typ': p.typ });
   const neuZeichnen = () => erneuereTeil(a, t, box, karte);
 
-  karte.append(h('div', { class: 'teil-kopf' },
+  anfuegen(karte, h('div', { class: 'teil-kopf' },
     h('span', { class: 'teil-id' }, `${t.id})`),
     h('div', { class: 'teil-text' }, tx(t.text, 'p'),
       h('p', { class: 'teil-meta' }, `${t.be} BE · AFB ${t.afb}`))));
 
   // Eingabebereich
-  if (p.typ === 'zahl') karte.append(zahlBereich(a, t, st, neuZeichnen));
-  else if (p.typ === 'auswahl') karte.append(auswahlBereich(a, t, st, neuZeichnen));
-  else karte.append(selbstBereich(a, t, st, neuZeichnen));
+  if (p.typ === 'zahl') anfuegen(karte, zahlBereich(a, t, st, neuZeichnen));
+  else if (p.typ === 'auswahl') anfuegen(karte, auswahlBereich(a, t, st, neuZeichnen));
+  else anfuegen(karte, selbstBereich(a, t, st, neuZeichnen));
 
   // Rückmeldung
   const rm = ansicht.rueckmeldung[k];
   if (rm) {
-    karte.append(h('div', { class: `rueckmeldung ${rm.art}`, role: 'status' },
+    anfuegen(karte, h('div', { class: `rueckmeldung ${rm.art}`, role: 'status' },
       h('strong', {}, rm.titel), rm.text ? h('span', {}, ' ', rm.text) : null));
   } else if (st.d) {
-    karte.append(h('div', { class: `rueckmeldung ${st.l && !st.ok ? 'neutral' : 'ok'}`, role: 'status' },
+    anfuegen(karte, h('div', { class: `rueckmeldung ${st.l && !st.ok ? 'neutral' : 'ok'}`, role: 'status' },
       h('strong', {}, standText(t, st))));
   }
 
   // Hilfen
   const hilfenBox = h('div', { class: 'hilfen' });
   t.hilfen.slice(0, st.h || 0).forEach((text, i) => {
-    hilfenBox.append(h('div', { class: 'hilfe' }, h('span', { class: 'hilfe-nr' }, `Hilfe ${i + 1}`), tx(text, 'p')));
+    anfuegen(hilfenBox, h('div', { class: 'hilfe' }, h('span', { class: 'hilfe-nr' }, `Hilfe ${i + 1}`), tx(text, 'p')));
   });
-  karte.append(hilfenBox);
+  anfuegen(karte, hilfenBox);
 
   // Knöpfe
   const reihe = h('div', { class: 'knopfreihe teil-knoepfe' });
   if (!st.d) {
     t.hilfen.forEach((_, i) => {
       if (i < (st.h || 0)) return;
-      reihe.append(knopf(`Hilfe ${i + 1}`, () => {
+      anfuegen(reihe, knopf(`Hilfe ${i + 1}`, () => {
         const s = standSchreiben(a, t);
         s.h = Math.max(s.h || 0, i + 1);
         speichere();
@@ -479,18 +497,23 @@ function teilKarte(a, t, box) {
       }, 'knopf leise', { disabled: i > (st.h || 0), 'data-aktion': 'hilfe' }));
     });
     if (p.typ !== 'selbst') {
-      const darf = (st.v || 0) >= 1 || (st.h || 0) >= t.hilfen.length;
-      reihe.append(knopf('Lösung zeigen', () => {
+      const ab = (st.s || Date.now()) + wartezeit(t);
+      const fehl = (st.v || 0) >= 1;
+      anfuegen(reihe, knopf('Lösung vergleichen', () => {
         const s = standSchreiben(a, t);
         s.l = true;
         s.d = true;
         delete ansicht.rueckmeldung[k];
         speichere();
         neuZeichnen();
-      }, 'knopf leise', { disabled: !darf, 'data-aktion': 'loesung', title: darf ? null : 'Erst nach einem Prüfversuch oder nach der letzten Hilfe' }));
+      }, 'knopf leise', { disabled: true, 'data-aktion': 'loesung', 'data-ab': ab, 'data-fehl': fehl ? '1' : '0' }));
     }
   }
-  if (reihe.children.length) karte.append(reihe);
+  if (reihe.children.length) anfuegen(karte, reihe);
+  if (!st.d && p.typ !== 'selbst') {
+    anfuegen(karte, h('p', { class: 'klein loesung-hinweis', 'aria-live': 'polite' }));
+    aktualisiereLoesungsKnopf(karte);
+  }
 
   // Lösung
   if (st.d && (p.typ !== 'selbst' || st.ok)) {
@@ -498,19 +521,39 @@ function teilKarte(a, t, box) {
       h('h3', {}, 'Lösung'),
       h('ol', {}, t.loesung.map((s) => tx(s, 'li'))));
     if (st.ok && p.typ !== 'selbst' && !st.l) {
-      karte.append(h('details', { class: 'loesung-klapp' }, h('summary', {}, 'Lösungsweg ansehen'), loesung));
+      anfuegen(karte, h('details', { class: 'loesung-klapp' }, h('summary', {}, 'Lösungsweg ansehen'), loesung));
     } else {
-      karte.append(loesung);
+      anfuegen(karte, loesung);
     }
   }
   return karte;
+}
+
+/** Wartezeit bis „Lösung vergleichen“ ab Beginn der Teilaufgabe. */
+function wartezeit(t) {
+  const k = KONFIG.loesungVergleichen;
+  return Math.max(k.mindestMinuten, k.minutenJeBE * t.be) * 60000;
+}
+
+/** „Lösung vergleichen“ ist frei nach einem falschen Ergebnis und nach Ablauf der Wartezeit. */
+function aktualisiereLoesungsKnopf(karte) {
+  const knopfEl = karte.querySelector('[data-aktion="loesung"]');
+  const hinweisEl = karte.querySelector('.loesung-hinweis');
+  if (!knopfEl || !hinweisEl) return;
+  const fehl = knopfEl.dataset.fehl === '1';
+  const rest = Number(knopfEl.dataset.ab) - Date.now();
+  knopfEl.disabled = !(fehl && rest <= 0);
+  let text = '';
+  if (!fehl) text = 'Lösung vergleichen ist erst nach einem falschen Ergebnis möglich.';
+  else if (rest > 0) text = `Lösung vergleichen ist in ${zeitText(rest)} min möglich.`;
+  if (hinweisEl.textContent !== text) hinweisEl.textContent = text;
 }
 
 function standText(t, st) {
   if (t.pruefung.typ === 'selbst') return `Selbst bewertet: ${st.r} von ${t.be} BE.`;
   if (st.ok && st.r) return `Richtig gelöst: ${st.r} von ${t.be} BE.`;
   if (st.ok) return `Richtig gelöst, aber nicht im ersten Versuch: 0 von ${t.be} BE.`;
-  return `Lösung angesehen: 0 von ${t.be} BE.`;
+  return `Lösung verglichen: 0 von ${t.be} BE.`;
 }
 
 function falschVerarbeiten(a, t, s, hinweis) {
@@ -598,7 +641,7 @@ function auswahlBereich(a, t, st, neuZeichnen) {
   for (const i of reihenfolge) {
     const richtig = p.richtig.includes(i);
     const klasse = st.d ? (richtig ? 'option zeige-richtig' : 'option') : 'option';
-    liste.append(h('label', { class: klasse },
+    anfuegen(liste, h('label', { class: klasse },
       h('input', {
         type: p.mehrfach ? 'checkbox' : 'radio', name, 'data-index': i, disabled: st.d, checked: !st.d && gewaehlt.has(i),
         onchange: (e) => {
@@ -651,11 +694,11 @@ function selbstBereich(a, t, st, neuZeichnen) {
     value: texte[k] || '',
     oninput: (e) => { texte[k] = e.target.value; sp.speichereTexte(texte); },
   });
-  box.append(
+  anfuegen(box, 
     h('label', { for: id, class: 'eingabe-label' }, 'Deine Antwort (freiwillig, bleibt nur auf diesem Gerät)'),
     textfeld);
   if (st.d) {
-    box.append(h('h3', { class: 'kriterien-titel' }, 'Kriterien'),
+    anfuegen(box, h('h3', { class: 'kriterien-titel' }, 'Kriterien'),
       h('ul', { class: 'kriterien' }, p.kriterien.map((c, i) => {
         const ja = (st.k || []).includes(i) || (!st.k && i < st.r);
         return h('li', { class: ja ? 'erfuellt' : 'offen' },
@@ -664,14 +707,14 @@ function selbstBereich(a, t, st, neuZeichnen) {
     return box;
   }
   if (!ansicht.phase[k]) {
-    box.append(h('div', { class: 'knopfreihe' }, knopf('Mit Kriterien vergleichen', () => {
+    anfuegen(box, h('div', { class: 'knopfreihe' }, knopf('Mit Kriterien vergleichen', () => {
       ansicht.phase[k] = 'kriterien';
       neuZeichnen();
     }, 'knopf haupt', { 'data-aktion': 'kriterien' })));
     return box;
   }
   const haken = new Set();
-  box.append(
+  anfuegen(box, 
     h('p', { class: 'hinweis-text' }, 'Hake jedes Kriterium ab, das deine Antwort enthält. Jedes Kriterium zählt 1 BE.'),
     h('div', { class: 'optionen' }, p.kriterien.map((c, i) => h('label', { class: 'option' },
       h('input', { type: 'checkbox', 'data-kriterium': i, onchange: (e) => { if (e.target.checked) haken.add(i); else haken.delete(i); } }),
@@ -703,7 +746,7 @@ function abschlussKarte(a) {
       knopf('Aufgabe neu bearbeiten', (e) => {
         const ziel = e.target.closest('.abschluss');
         if (ziel.querySelector('.bestaetigung')) return;
-        ziel.append(bestaetigung('Der Stand dieser Aufgabe wird gelöscht.', 'Neu bearbeiten', () => {
+        anfuegen(ziel, bestaetigung('Der Stand dieser Aufgabe wird gelöscht.', 'Neu bearbeiten', () => {
           for (const t of a.teile) {
             delete zustand.teile[teilSchluessel(a, t)];
             delete texte[teilSchluessel(a, t)];
@@ -727,7 +770,7 @@ function starteDiagnose() {
 function seiteDiagnose() {
   if (diagnoseSitzung && !diagnoseSitzung.fertig) { diagnoseFrage(); return; }
   if (zustand.diagnose && Object.keys(zustand.diagnose.antworten || {}).length) { diagnoseAuswertung(); return; }
-  main.append(h('section', { class: 'karte' },
+  anfuegen(main, h('section', { class: 'karte' },
     h('h1', {}, 'Diagnose'),
     h('p', {}, `Die Diagnose besteht aus ${daten.diagnose.length} Kurzfragen, zwei zu jedem Thema. Sie dauert etwa 8 Minuten. Danach siehst du, mit welchen Themen du beginnen solltest.`),
     h('div', { class: 'knopfreihe' }, knopf('Diagnose starten', () => { starteDiagnose(); zeichne(); }, 'knopf haupt'))));
@@ -738,7 +781,7 @@ function diagnoseFrage() {
   const karte = h('section', { class: 'karte diagnose' });
   const zeichneFrage = () => {
     const { q, reihenfolge } = s.fragen[s.i];
-    karte.replaceChildren(
+    ersetzen(karte, 
       h('p', { class: 'ueberzeile' }, `Frage ${s.i + 1} von ${s.fragen.length}`),
       h('div', { class: 'fortschritt-duenn' }, h('span', { style: `width:${Math.round((s.i / s.fragen.length) * 100)}%` })),
       tx(q.frage, 'h2', 'diagnose-frage'),
@@ -782,7 +825,7 @@ function diagnoseFrage() {
     );
     mathe(karte);
   };
-  main.append(karte);
+  anfuegen(main, karte);
   zeichneFrage();
 }
 
@@ -792,7 +835,7 @@ function diagnoseAuswertung() {
   const gesamt = Object.keys(antworten).length;
   const fehler = diagnoseFehlerThemen();
   const empfohlen = daten.bereiche.flatMap((b) => b.themen.filter((t) => fehler.has(t.id)));
-  main.append(
+  anfuegen(main, 
     h('section', { class: 'kopfbereich' },
       h('h1', {}, 'Auswertung der Diagnose'),
       h('p', { class: 'untertitel' }, `Du hast ${richtig} von ${gesamt} Fragen richtig beantwortet.`),
@@ -836,7 +879,7 @@ function seiteKlausur() {
 
 function klausurStart() {
   const verlauf = zustand.klausurVerlauf || [];
-  main.append(
+  anfuegen(main, 
     h('section', { class: 'karte' },
       h('h1', {}, 'Probeklausur'),
       h('ul', { class: 'liste' },
@@ -848,7 +891,7 @@ function klausurStart() {
       h('div', { class: 'knopfreihe' }, knopf('Probeklausur beginnen', () => {
         const auswahl = zieheKlausur(daten, KONFIG.klausur);
         if (!auswahl) {
-          main.append(h('p', { class: 'warnhinweis' }, 'Es konnte keine passende Zusammenstellung gefunden werden.'));
+          anfuegen(main, h('p', { class: 'warnhinweis' }, 'Es konnte keine passende Zusammenstellung gefunden werden.'));
           return;
         }
         const be = auswahl.reduce((s, a) => s + aufgabeBE(a), 0);
@@ -903,8 +946,8 @@ function klausurLaeuft() {
         h('p', { class: 'chips' }, h('span', { class: 'chip' }, `${aufgabeBE(a)} BE`))),
       tx(a.kontext, 'p', 'kontext'),
       abbildung(a));
-    for (const t of a.teile) karte.append(klausurTeil(a, t));
-    formular.append(karte);
+    for (const t of a.teile) anfuegen(karte, klausurTeil(a, t));
+    anfuegen(formular, karte);
   });
   const abgabeBox = h('div', { class: 'karte abgabe' });
   const abgeben = () => {
@@ -914,20 +957,20 @@ function klausurLaeuft() {
     speichere();
     zeichne();
   };
-  abgabeBox.append(h('div', { class: 'knopfreihe' },
+  anfuegen(abgabeBox, h('div', { class: 'knopfreihe' },
     knopf('Abgeben', () => {
       if (abgabeBox.querySelector('.bestaetigung')) return;
-      abgabeBox.append(bestaetigung('Wirklich abgeben? Danach kannst du nichts mehr ändern.', 'Ja, abgeben', abgeben, 'Weiter bearbeiten'));
+      anfuegen(abgabeBox, bestaetigung('Wirklich abgeben? Danach kannst du nichts mehr ändern.', 'Ja, abgeben', abgeben, 'Weiter bearbeiten'));
     }, 'knopf haupt', { 'data-aktion': 'abgeben' }),
     knopf('Probeklausur abbrechen', () => {
       if (abgabeBox.querySelector('.bestaetigung')) return;
-      abgabeBox.append(bestaetigung('Die Probeklausur wird ohne Auswertung beendet.', 'Abbrechen und löschen', () => {
+      anfuegen(abgabeBox, bestaetigung('Die Probeklausur wird ohne Auswertung beendet.', 'Abbrechen und löschen', () => {
         zustand.klausur = null;
         speichere();
         zeichne();
       }, 'Weiter bearbeiten'));
     }, 'knopf leise')));
-  main.append(leiste, ablaufHinweis, formular, abgabeBox);
+  anfuegen(main, leiste, ablaufHinweis, formular, abgabeBox);
   aktualisiere();
   uhr = setInterval(aktualisiere, 1000);
 }
@@ -943,7 +986,7 @@ function klausurTeil(a, t) {
   const merke = (wert) => { kl.antworten[k] = wert; speichere(); };
   if (p.typ === 'zahl') {
     const id = `k-${k.replace(/\W/g, '-')}`;
-    box.append(h('div', { class: 'eingabe' },
+    anfuegen(box, h('div', { class: 'eingabe' },
       h('label', { for: id, class: 'eingabe-label' }, 'Dein Ergebnis'),
       h('div', { class: 'eingabe-zeile' },
         h('input', {
@@ -954,7 +997,7 @@ function klausurTeil(a, t) {
   } else if (p.typ === 'auswahl') {
     const gewaehlt = new Set(kl.antworten[k] || []);
     const name = `k-${k.replace(/\W/g, '-')}`;
-    box.append(h('div', { class: 'optionen' }, (kl.reihenfolge[k] || [...p.optionen.keys()]).map((i) => h('label', { class: 'option' },
+    anfuegen(box, h('div', { class: 'optionen' }, (kl.reihenfolge[k] || [...p.optionen.keys()]).map((i) => h('label', { class: 'option' },
       h('input', {
         type: p.mehrfach ? 'checkbox' : 'radio', name, 'data-index': i, checked: gewaehlt.has(i),
         onchange: (e) => {
@@ -966,7 +1009,7 @@ function klausurTeil(a, t) {
       tx(p.optionen[i], 'span', 'option-text')))));
   } else {
     const id = `k-${k.replace(/\W/g, '-')}`;
-    box.append(h('div', { class: 'eingabe' },
+    anfuegen(box, h('div', { class: 'eingabe' },
       h('label', { for: id, class: 'eingabe-label' }, 'Deine Antwort'),
       h('textarea', {
         id, rows: 4, class: 'textfeld', placeholder: 'Antwort hier oder im Hefter', value: kl.texte[k] || '',
@@ -978,7 +1021,7 @@ function klausurTeil(a, t) {
 
 function klausurSelbst() {
   const kl = zustand.klausur;
-  main.append(h('section', { class: 'kopfbereich' },
+  anfuegen(main, h('section', { class: 'kopfbereich' },
     h('h1', {}, 'Selbstkontrolle'),
     h('p', { class: 'untertitel' }, 'Vergleiche deine Antworten mit den Kriterien. Hake nur ab, was deine Antwort wirklich enthält. Jedes Kriterium zählt 1 BE.')));
   for (const a of klausurAufgaben()) {
@@ -986,7 +1029,7 @@ function klausurSelbst() {
       if (t.pruefung.typ !== 'selbst') continue;
       const k = teilSchluessel(a, t);
       const haken = new Set(kl.haken[k] || []);
-      main.append(h('section', { class: 'karte teil', 'data-teil': k },
+      anfuegen(main, h('section', { class: 'karte teil', 'data-teil': k },
         h('p', { class: 'ueberzeile' }, `${a.titel}, Teil ${t.id}) · ${t.be} BE`),
         tx(t.text, 'p'),
         kl.texte[k] ? h('blockquote', { class: 'eigene-antwort' }, kl.texte[k])
@@ -1003,7 +1046,7 @@ function klausurSelbst() {
           tx(c, 'span', 'option-text'))))));
     }
   }
-  main.append(h('div', { class: 'knopfreihe' }, knopf('Auswertung anzeigen', () => {
+  anfuegen(main, h('div', { class: 'knopfreihe' }, knopf('Auswertung anzeigen', () => {
     kl.phase = 'fertig';
     klausurAbschliessen();
     speichere();
@@ -1048,11 +1091,11 @@ function klausurErgebnis() {
   const v = verteilung(daten, aufgaben);
   const zeigeLoesungen = ansicht.phase.klausurLoesung;
   const aktionen = h('div', { class: 'knopfreihe' });
-  aktionen.append(
+  anfuegen(aktionen, 
     knopf(zeigeLoesungen ? 'Lösungen ausblenden' : 'Lösungen ansehen', () => {
       ansicht.phase.klausurLoesung = !zeigeLoesungen;
       const y = window.scrollY;
-      main.replaceChildren();
+      ersetzen(main);
       klausurErgebnis();
       mathe(main);
       window.scrollTo(0, y);
@@ -1065,7 +1108,7 @@ function klausurErgebnis() {
         zeichne();
       }));
     }));
-  main.append(
+  anfuegen(main, 
     h('section', { class: 'kopfbereich' }, h('h1', {}, 'Auswertung der Probeklausur')),
     h('section', { class: 'karte ergebnis' },
       h('div', { class: 'ergebnis-gross' },
@@ -1090,7 +1133,7 @@ function klausurErgebnis() {
             h('td', {}, String(z.np)), h('td', {}, String(z.be)), h('td', {}, `${String(z.prozent).replace('.', ',')} %`))))))),
   );
   if (zeigeLoesungen) {
-    for (const a of aufgaben) main.append(klausurLoesung(a));
+    for (const a of aufgaben) anfuegen(main, klausurLoesung(a));
   }
 }
 
@@ -1148,7 +1191,7 @@ function seiteUebersicht() {
         zeichne();
       }));
     }, 'knopf leise', { 'data-aktion': 'neu-beginnen' }));
-  main.append(h('section', { class: 'kopfbereich' },
+  anfuegen(main, h('section', { class: 'kopfbereich' },
     h('h1', {}, 'Meine Übersicht'),
     h('p', { class: 'untertitel' }, `Stand: ${datumText(new Date().toISOString())}`)));
 
@@ -1158,14 +1201,14 @@ function seiteUebersicht() {
       for (const k of Object.keys(x)) x[k] += y[k];
       return x;
     });
-    zusammen.append(h('div', { class: 'kennzahl' },
+    anfuegen(zusammen, h('div', { class: 'kennzahl' },
       h('span', { class: 'kennzahl-wert' }, prozent(s.be / s.beMax)),
       h('span', { class: 'kennzahl-text' }, `${b.name}: ${s.be} von ${s.beMax} BE`)));
   }
-  main.append(h('section', { class: 'karte' }, zusammen, aktionen));
+  anfuegen(main, h('section', { class: 'karte' }, zusammen, aktionen));
 
   for (const b of daten.bereiche) {
-    main.append(h('section', { class: 'karte' },
+    anfuegen(main, h('section', { class: 'karte' },
       h('h2', {}, b.name),
       h('div', { class: 'tabelle-huelle' }, h('table', { class: 'tabelle uebersicht' },
         h('thead', {}, h('tr', {},
@@ -1181,7 +1224,7 @@ function seiteUebersicht() {
             h('td', { class: d && d.richtig < d.gesamt ? 'mit-fehler' : null }, d ? `${d.richtig} von ${d.gesamt}` : 'nicht bearbeitet'));
         }))))));
   }
-  main.append(h('section', { class: 'karte' },
+  anfuegen(main, h('section', { class: 'karte' },
     h('h2', {}, 'Probeklausuren'),
     verlauf.length
       ? h('ul', { class: 'diagnose-tabelle' }, verlauf.slice().reverse().map((v) => h('li', {},
@@ -1198,7 +1241,7 @@ function kopiere(text, knopfEl) {
     navigator.clipboard.writeText(text).then(fertig, () => {});
   } else {
     const t = h('textarea', { value: text, class: 'versteckt-kopie' });
-    document.body.append(t);
+    anfuegen(document.body, t);
     t.select();
     try { document.execCommand('copy'); fertig(); } catch (e) { /* nichts */ }
     t.remove();
@@ -1221,7 +1264,7 @@ function seiteSichern() {
   }
   const codeKnopf = knopf('Code kopieren', (e) => kopiere(code, e.target), 'knopf haupt', { 'data-text': 'Code kopieren' });
   const linkKnopf = knopf('Link kopieren', (e) => kopiere(adresse, e.target), 'knopf', { 'data-text': 'Link kopieren' });
-  main.append(h('section', { class: 'karte' },
+  anfuegen(main, h('section', { class: 'karte' },
     h('h1', {}, 'Fortschritt sichern'),
     h('p', {}, 'Scanne den QR-Code mit der Kamera deines Handys. Dann öffnet sich die Lerntheke mit deinem Fortschritt. Du kannst auch den Code kopieren und am anderen Gerät unter „Fortschritt laden“ einfügen.'),
     qrBox,
@@ -1234,7 +1277,7 @@ function seiteSichern() {
 function seiteLaden(codeAusLink) {
   const feld = h('textarea', { id: 'code-eingabe', class: 'textfeld code', rows: 3, value: codeAusLink || '', placeholder: 'Code hier einfügen' });
   const meldung = h('div', { role: 'status' });
-  main.append(h('section', { class: 'karte' },
+  anfuegen(main, h('section', { class: 'karte' },
     h('h1', {}, 'Fortschritt laden'),
     h('p', {}, codeAusLink
       ? 'Der Link enthält einen gesicherten Fortschritt. Möchtest du ihn auf diesem Gerät übernehmen?'
@@ -1251,17 +1294,17 @@ function seiteLaden(codeAusLink) {
         zeichne();
         hinweis('Der Fortschritt wurde übernommen.');
       } catch (e) {
-        meldung.replaceChildren(h('p', { class: 'rueckmeldung falsch' }, e.message));
+        ersetzen(meldung, h('p', { class: 'rueckmeldung falsch' }, e.message));
       }
     }, 'knopf haupt', { 'data-aktion': 'code-laden' })),
     meldung));
 }
 
 function hinweis(text, knopfText, aktion) {
-  hinweisLeiste.replaceChildren(h('div', { class: 'hinweis-inhalt', role: 'status' },
+  ersetzen(hinweisLeiste, h('div', { class: 'hinweis-inhalt', role: 'status' },
     h('span', {}, text),
     knopfText ? knopf(knopfText, aktion, 'knopf klein') : null,
-    knopf('Schließen', () => hinweisLeiste.replaceChildren(), 'knopf klein leise')));
+    knopf('Schließen', () => ersetzen(hinweisLeiste), 'knopf klein leise')));
 }
 
 // ------------------------------------------------------------------ Lehrkraft
@@ -1271,7 +1314,7 @@ function seiteLehrer() {
   for (const a of daten.aufgaben) {
     for (const t of a.teile) { stats.teile++; stats.be += t.be; stats.afb[t.afb] += t.be; }
   }
-  main.append(h('section', { class: 'karte' },
+  anfuegen(main, h('section', { class: 'karte' },
     h('h1', {}, 'Vorschau für die Lehrkraft'),
     h('p', {}, `${daten.themen.length} Themen, ${daten.aufgaben.length} Aufgaben, ${stats.teile} Teilaufgaben, ${stats.be} BE, ${daten.diagnose.length} Diagnosefragen. AFB I ${prozent(stats.afb.I / stats.be)}, II ${prozent(stats.afb.II / stats.be)}, III ${prozent(stats.afb.III / stats.be)}. Stand der Inhalte: ${daten.meta.stand}.`),
     h('label', { class: 'option schalter' },
@@ -1294,7 +1337,7 @@ function seiteLehrer() {
       h('p', { class: 'klein' }, `Hefter: ${t.hefter}`),
       h('ul', { class: 'checkliste' }, t.checkliste.map((c) => tx(c, 'li'))));
     for (const a of daten.aufgabenJeThema.get(t.id)) {
-      block.append(h('article', { class: 'karte lehrer-aufgabe', 'data-aufgabe': a.id },
+      anfuegen(block, h('article', { class: 'karte lehrer-aufgabe', 'data-aufgabe': a.id },
         h('p', { class: 'ueberzeile' }, a.id, ' · ', h('a', { href: `#/aufgabe/${a.id}` }, 'in der Lerntheke öffnen')),
         aufgabenKopf(a, false),
         tx(a.kontext, 'p', 'kontext'),
@@ -1302,12 +1345,12 @@ function seiteLehrer() {
         a.teile.map((teil) => lehrerTeil(teil))));
     }
     const fragen = daten.diagnose.filter((q) => q.thema === t.id);
-    block.append(h('div', { class: 'karte' },
+    anfuegen(block, h('div', { class: 'karte' },
       h('h3', {}, 'Diagnosefragen'),
       h('ol', {}, fragen.map((q) => h('li', {}, tx(q.frage, 'p'),
         h('ul', { class: 'optionsliste' }, q.optionen.map((o, i) => h('li', { class: i === q.richtig ? 'richtig' : null },
           tx(o, 'span'), i === q.richtig ? h('span', { class: 'option-marke' }, 'richtig') : null))))))));
-    main.append(block);
+    anfuegen(main, block);
   }
 }
 
@@ -1333,7 +1376,7 @@ function lehrerTeil(t) {
 // ------------------------------------------------------------------ Start der App
 
 function zeigeFehler(titel, meldungen) {
-  main.replaceChildren(h('section', { class: 'karte fehlerseite', role: 'alert' },
+  ersetzen(main, h('section', { class: 'karte fehlerseite', role: 'alert' },
     h('h1', {}, titel),
     h('p', {}, 'Bitte gib der Lehrkraft Bescheid.'),
     meldungen.length ? h('ul', {}, meldungen.slice(0, 30).map((m) => h('li', {}, m))) : null));
@@ -1383,6 +1426,7 @@ async function starte() {
   });
   document.addEventListener('toggle', (e) => passeFormelnAn(e.target), true);
   zeichne();
+  setInterval(() => main.querySelectorAll('section.teil').forEach(aktualisiereLoesungsKnopf), 1000);
   setTimeout(pruefeAktualisierung, 3000);
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     navigator.serviceWorker.register('sw.js').catch(() => {});
